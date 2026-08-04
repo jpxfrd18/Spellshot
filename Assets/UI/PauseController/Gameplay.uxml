@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/style.uss?fileID=7433441132597879392&amp;guid=f467c54525fb7374a8c95ffba3541e8f&amp;type=3#style"/>
+    <ui:VisualElement name="HealthContainer" style="flex-direction: row; padding-left: 20px;">
+        <ui:Label text="Health:" name="HealthLabel" class="statLabel" style="color: rgb(220, 24, 34);"/>
+        <ui:Label text="67" name="HealthAmount" class="statLabel" style="color: rgb(220, 24, 34);"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="ManaContainer" style="flex-direction: row; padding-left: 20px;">
+        <ui:Label text="Mana:" name="ManaLabel" class="statLabel" style="color: rgb(64, 109, 181);"/>
+        <ui:Label text="67" name="ManaAmount" class="statLabel" style="color: rgb(64, 109, 181);"/>
+    </ui:VisualElement>
+</ui:UXML>

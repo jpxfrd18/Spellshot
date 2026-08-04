@@ -1,0 +1,21 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/style.uss?fileID=7433441132597879392&amp;guid=f467c54525fb7374a8c95ffba3541e8f&amp;type=3#style"/>
+    <ui:VisualElement name="Background" style="flex-grow: 1; padding-top: 50px; padding-right: 50px; padding-bottom: 50px; padding-left: 200px; background-color: rgb(0, 0, 0);">
+        <ui:Label text="Controls" name="Controls" class="display" style="-unity-text-align: upper-center;"/>
+        <ui:Label text="Movement: Use WASD or the arrow keys to move." name="Movement" class="settingLabel label" style="font-size: 40px;"/>
+        <ui:Label text="Looking Around: Move the mouse to look around." name="Look" class="settingLabel label" style="font-size: 40px;"/>
+        <ui:Label text="Spell 1: Left click to cast spell 1." name="1" class="settingLabel label" style="font-size: 40px;"/>
+        <ui:Label text="Spell 2: Right click to cast spell 2." name="2" class="settingLabel label" style="font-size: 40px;"/>
+        <ui:Label text="Spell 3: Press Q to cast spell 3." name="3" class="settingLabel label" style="font-size: 40px;"/>
+        <ui:Label text="Spell 4: Press E to cast spell 4." name="4" class="settingLabel label" style="font-size: 40px;"/>
+        <ui:Label text="Jump: Press Space to jump. Hold space for repeated jumps." name="5" class="settingLabel label" style="font-size: 40px;"/>
+        <ui:Label text="Pause: Press ESC to Pause or Play." name="6" class="settingLabel label" style="font-size: 40px;"/>
+        <ui:Label text="Restart: Press and hold R to restart the level." name="7" class="settingLabel label" style="font-size: 40px;"/>
+        <ui:Label text="Spell Order: Spells are ordered in the order selected." class="settingLabel label" style="font-size: 40px;"/>
+        <ui:VisualElement name="Buttons" style="flex-direction: row; justify-content: space-around; margin-top: 30px;">
+            <ui:Button text="Back" name="Back" class="button"/>
+            <ui:Button text="Keyboard" name="Keyboard" class="button"/>
+            <ui:Button text="Controller" name="Controller" class="button"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,31 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/style.uss?fileID=7433441132597879392&amp;guid=f467c54525fb7374a8c95ffba3541e8f&amp;type=3#style"/>
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.78); align-items: center; justify-content: flex-start; padding-top: 20px; color: rgba(0, 0, 0, 0.78);">
+        <ui:Label text="Settings&#10;" name="Title" class="display"/>
+        <ui:VisualElement name="Main" style="flex-direction: row; width: 100%; justify-content: space-around; padding-top: 40px; margin-top: 50px; padding-left: 100px; padding-right: 100px; align-items: center;">
+            <ui:VisualElement name="SetttingContainer" style="align-items: flex-start;">
+                <ui:VisualElement name="SensitivityContainer" class="settingContainer">
+                    <ui:Label text="Sensitivity:" name="SensitivityLabel" class="label" style="width: 400px;"/>
+                    <ui:VisualElement name="SensitivityUpdate" class="settingUpdate">
+                        <ui:Button text="&lt;" name="SensitivityDown" class="settingButton"/>
+                        <ui:Label text="67&#10;" name="SensitivityDisplay" class="label" style="width: 100px; -unity-text-align: middle-center;"/>
+                        <ui:Button text="&gt;" name="SensitivityUp" class="settingButton"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="VolumeContainer" class="settingContainer" style="flex-grow: 1; flex-direction: row; align-items: center;">
+                    <ui:Label text="Music Volume:" name="VolumeLabel" class="settingLabel label" style="width: 400px;"/>
+                    <ui:VisualElement name="VolumeUpdate" class="settingUpdate">
+                        <ui:Button text="&lt;" name="VolumeDown" class="settingButton"/>
+                        <ui:Label text="67&#10;" name="VolumeDisplay" class="settingLabel label" style="width: 100px; -unity-text-align: middle-center;"/>
+                        <ui:Button text="&gt;" name="VolumeUp" class="settingButton"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Buttons" style="flex-grow: 1; padding-left: 100px; align-items: flex-end;">
+                <ui:Button text="Keyboard" name="Keyboard" class="button" style="margin-bottom: 50px; width: 500px;"/>
+                <ui:Button text="Controller" name="Controller" class="button" style="width: 500px; margin-bottom: 50px;"/>
+                <ui:Button text="Back" name="BackButton" class="button" style="width: 500px;"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

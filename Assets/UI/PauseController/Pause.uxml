@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/style.uss?fileID=7433441132597879392&amp;guid=f467c54525fb7374a8c95ffba3541e8f&amp;type=3#style"/>
+    <ui:VisualElement usage-hints="-1" name="Background" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.78); background-size: 100% 100%; width: 100%; height: 100%; align-items: stretch; justify-content: flex-start; align-self: center; padding-top: 10px; padding-left: 400px; padding-right: 400px;">
+        <ui:Label text="Paused" name="Paused" class="display" style="margin-bottom: 135px; margin-top: 40px;"/>
+        <ui:Button text="Play&#10;" name="Play" class="button" style="margin-bottom: 50px;"/>
+        <ui:Button text="Restart" name="Restart" class="button" style="margin-bottom: 50px;"/>
+        <ui:Button text="Settings" name="Settings" class="button" style="margin-bottom: 50px;"/>
+        <ui:Button text="Main Menu" name="Menu" class="button" style="margin-bottom: 50px;"/>
+    </ui:VisualElement>
+    <ui:Button text="Button" name="NoFocus" style="display: none;"/>
+</ui:UXML>

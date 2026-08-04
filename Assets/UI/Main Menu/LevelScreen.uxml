@@ -1,0 +1,64 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/style.uss?fileID=7433441132597879392&amp;guid=f467c54525fb7374a8c95ffba3541e8f&amp;type=3#style"/>
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgb(0, 0, 0);">
+        <ui:Label text="Placeholder" name="Title" class="display" style="-unity-text-align: upper-center;"/>
+        <ui:VisualElement name="Main" style="flex-grow: 1; flex-direction: row; margin-top: 100px;">
+            <ui:VisualElement name="SpellButtons" style="flex-grow: initial; padding-left: 100px; padding-top: 0; margin-right: 100px;">
+                <ui:Button text="Enchantment" name="Enchantment" class="button grayscale" style="font-size: 50px; height: 100px; margin-bottom: 20px;"/>
+                <ui:Label text="Select Incantations" class="label" style="margin-bottom: 4px; -unity-text-align: upper-center; margin-top: 60px;"/>
+                <ui:VisualElement name="Grid">
+                    <ui:VisualElement name="Row1" style="flex-grow: initial; flex-direction: row;">
+                        <ui:Button text="MM" name="1" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+                            <ui:Label text="1" name="1i" style="position: absolute; top: -20px; left: -20px; color: rgba(0, 0, 0, 0.78); background-color: rgb(140, 195, 227); font-size: 20px; -unity-text-outline-width: 0; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; height: 30px; width: 30px;"/>
+                        </ui:Button>
+                        <ui:Button text="FB" name="2" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+                            <ui:Label text="2" name="2i" style="position: absolute; top: -20px; left: -20px; color: rgba(0, 0, 0, 0.78); background-color: rgb(140, 195, 227); font-size: 20px; -unity-text-outline-width: 0; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; height: 30px; width: 30px;"/>
+                        </ui:Button>
+                        <ui:Button text="FL" name="3" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+                            <ui:Label text="1" name="3i" style="position: absolute; top: -20px; left: -20px; color: rgba(0, 0, 0, 0.78); background-color: rgb(140, 195, 227); font-size: 20px; -unity-text-outline-width: 0; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; height: 30px; width: 30px;"/>
+                        </ui:Button>
+                        <ui:Button text="?" name="4" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+                            <ui:Label text="1" name="4i" style="position: absolute; top: -20px; left: -20px; color: rgba(0, 0, 0, 0.78); background-color: rgb(140, 195, 227); font-size: 20px; -unity-text-outline-width: 0; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; height: 30px; width: 30px;"/>
+                        </ui:Button>
+                        <ui:Button text="?" name="5" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+                            <ui:Label text="1" name="5i" style="position: absolute; top: -20px; left: -20px; color: rgba(0, 0, 0, 0.78); background-color: rgb(140, 195, 227); font-size: 20px; -unity-text-outline-width: 0; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; height: 30px; width: 30px;"/>
+                        </ui:Button>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Row2" style="flex-grow: initial; flex-direction: row;">
+                        <ui:Button text="LA" name="6" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+                            <ui:Label text="3" name="6i" style="position: absolute; top: -20px; left: -20px; color: rgba(0, 0, 0, 0.78); background-color: rgb(140, 195, 227); font-size: 20px; -unity-text-outline-width: 0; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; height: 30px; width: 30px;"/>
+                        </ui:Button>
+                        <ui:Button text="GU" name="7" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+                            <ui:Label text="4" name="7i" style="position: absolute; top: -20px; left: -20px; color: rgba(0, 0, 0, 0.78); background-color: rgb(140, 195, 227); font-size: 20px; -unity-text-outline-width: 0; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; height: 30px; width: 30px;"/>
+                        </ui:Button>
+                        <ui:Button text="?" name="8" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+                            <ui:Label text="1" name="8i" style="position: absolute; top: -20px; left: -20px; color: rgba(0, 0, 0, 0.78); background-color: rgb(140, 195, 227); font-size: 20px; -unity-text-outline-width: 0; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; height: 30px; width: 30px;"/>
+                        </ui:Button>
+                        <ui:Button text="?" name="9" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+                            <ui:Label text="1" name="9i" style="position: absolute; top: -20px; left: -20px; color: rgba(0, 0, 0, 0.78); background-color: rgb(140, 195, 227); font-size: 20px; -unity-text-outline-width: 0; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; height: 30px; width: 30px;"/>
+                        </ui:Button>
+                        <ui:Button text="PO" name="10" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+                            <ui:Label text="1" name="10i" style="position: absolute; top: -20px; left: -20px; color: rgba(0, 0, 0, 0.78); background-color: rgb(140, 195, 227); font-size: 20px; -unity-text-outline-width: 0; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; height: 30px; width: 30px;"/>
+                        </ui:Button>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="DescriptionContainer" style="flex-grow: 1; border-left-color: rgb(255, 235, 4); border-right-color: rgb(255, 235, 4); border-top-color: rgb(255, 235, 4); border-bottom-color: rgb(255, 235, 4); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; margin-right: 50px;">
+                <ui:Label text="Placeholder" name="Subtitle" class="label" style="-unity-text-align: upper-center;"/>
+                <ui:Label text="Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder&#10;Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder" name="Description" class="label" style="white-space: normal; -unity-text-align: upper-left; font-size: 40px; padding-top: 10px; padding-left: 40px; padding-right: 20px;"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Buttons" style="flex-grow: 0.2; flex-direction: row; justify-content: space-around; padding-bottom: 0; padding-top: 0; margin-bottom: 50px; margin-top: 50px;">
+            <ui:Button text="Back" name="Back" class="button"/>
+            <ui:Button text="Start" name="Start" class="button"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Popup" style="flex-grow: 1; background-color: rgb(0, 0, 0); position: absolute; left: 25%; top: 25%; border-left-color: rgb(255, 235, 4); border-right-color: rgb(255, 235, 4); border-top-color: rgb(255, 235, 4); border-bottom-color: rgb(255, 235, 4); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; padding-top: 30px; padding-right: 30px; padding-bottom: 30px; padding-left: 30px; display: none;">
+        <ui:Label text="You have less than 4 spells selected." name="Warning" class="label"/>
+        <ui:Label text="Are you sure you want to continue?" name="Warning2" class="label"/>
+        <ui:VisualElement name="Buttons" style="flex-grow: 1; flex-direction: row; justify-content: space-around; margin-top: 20px;">
+            <ui:Button text="Back" name="Back2" class="button"/>
+            <ui:Button text="Continue" name="Continue" class="button"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

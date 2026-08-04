@@ -1,0 +1,16 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/style.uss?fileID=7433441132597879392&amp;guid=f467c54525fb7374a8c95ffba3541e8f&amp;type=3#style"/>
+    <ui:VisualElement usage-hints="-1" name="Background" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.78); background-size: 100% 100%; width: 100%; height: 100%; align-items: stretch; justify-content: flex-start; align-self: center; padding-top: 50px; padding-left: 200px; padding-right: 200px;">
+        <ui:Label text="You Win!" name="YouWin" class="display"/>
+        <ui:VisualElement name="TimeDisplay" style="flex-direction: row; width: 100%; justify-content: space-around;">
+            <ui:Label text="Time:  99:99.99" name="TimeDisplay" class="settingLabel label"/>
+            <ui:Label text="Best Time: 99:99.99" name="BestTimeDisplay" class="settingLabel label"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="Buttons" style="flex-grow: 1; padding-left: 200px; padding-right: 200px;">
+            <ui:Button text="Next Level" name="NextLevel" class="button" style="margin-top: 50px;"/>
+            <ui:Button text="Restart" name="Restart" class="button" style="margin-top: 50px;"/>
+            <ui:Button text="Settings" name="Settings" class="button" style="margin-top: 50px;"/>
+            <ui:Button text="Main Menu" name="Menu" class="button" style="margin-top: 50px; margin-bottom: 1px;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
