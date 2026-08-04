@@ -1,11 +1,11 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/style.uss?fileID=7433441132597879392&amp;guid=f467c54525fb7374a8c95ffba3541e8f&amp;type=3#style"/>
+    <Style src="project://database/Assets/UI%20Toolkit/style.uss?fileID=7433441132597879392&amp;guid=f467c54525fb7374a8c95ffba3541e8f&amp;type=3#style"/>
     <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgb(0, 0, 0);">
         <ui:Label text="Placeholder" name="Title" class="display" style="-unity-text-align: upper-center;"/>
         <ui:VisualElement name="Main" style="flex-grow: 1; flex-direction: row; margin-top: 100px;">
             <ui:VisualElement name="SpellButtons" style="flex-grow: initial; padding-left: 100px; padding-top: 0; margin-right: 100px;">
                 <ui:Button text="Enchantment" name="Enchantment" class="button grayscale" style="font-size: 50px; height: 100px; margin-bottom: 20px;"/>
-                <ui:Label text="Select Incantations" class="label" style="margin-bottom: 4px; -unity-text-align: upper-center; margin-top: 60px;"/>
+                <ui:Label text="Select 4 Incantations" class="label" style="margin-bottom: 4px; -unity-text-align: upper-center; margin-top: 60px;"/>
                 <ui:VisualElement name="Grid">
                     <ui:VisualElement name="Row1" style="flex-grow: initial; flex-direction: row;">
                         <ui:Button text="MM" name="1" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
@@ -44,8 +44,8 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="DescriptionContainer" style="flex-grow: 1; border-left-color: rgb(255, 235, 4); border-right-color: rgb(255, 235, 4); border-top-color: rgb(255, 235, 4); border-bottom-color: rgb(255, 235, 4); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; margin-right: 50px;">
-                <ui:Label text="Placeholder" name="Subtitle" class="label" style="-unity-text-align: upper-center;"/>
-                <ui:Label text="Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder&#10;Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder" name="Description" class="label" style="white-space: normal; -unity-text-align: upper-left; font-size: 40px; padding-top: 10px; padding-left: 40px; padding-right: 20px;"/>
+                <ui:Label text="Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder" name="Subtitle" class="label" style="-unity-text-align: upper-center; white-space: pre-wrap; padding-left: 40px; padding-right: 40px;"/>
+                <ui:Label text="Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder" name="Description" class="label" style="white-space: normal; -unity-text-align: upper-left; font-size: 40px; padding-top: 10px; padding-left: 40px; padding-right: 20px;"/>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Buttons" style="flex-grow: 0.2; flex-direction: row; justify-content: space-around; padding-bottom: 0; padding-top: 0; margin-bottom: 50px; margin-top: 50px;">

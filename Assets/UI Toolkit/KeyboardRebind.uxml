@@ -1,5 +1,5 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/style.uss?fileID=7433441132597879392&amp;guid=f467c54525fb7374a8c95ffba3541e8f&amp;type=3#style"/>
+    <Style src="project://database/Assets/UI%20Toolkit/style.uss?fileID=7433441132597879392&amp;guid=f467c54525fb7374a8c95ffba3541e8f&amp;type=3#style"/>
     <ui:VisualElement name="Background" style="background-color: rgba(0, 0, 0, 0.78); width: 100%; height: 100%;">
         <ui:Label text="Keyboard Rebind" name="Title" class="display"/>
         <ui:VisualElement name="Main" style="flex-grow: 1; flex-direction: row; align-items: center; padding-left: 50px; padding-right: 50px; padding-bottom: 0; padding-top: 20px;">
@@ -7,43 +7,43 @@
                 <ui:VisualElement name="BindingContainer" style="flex-direction: row;">
                     <ui:Label text="Spell 1:" class="label" style="-unity-text-align: middle-left; width: 200px;"/>
                     <ui:Button text="&lt;" name="1l" class="settingButton"/>
-                    <ui:Label text="Mouse Left" name="1" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=730d0e79abf9eee42b569904409e11a4&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
+                    <ui:Label text="Mouse Left" name="1" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=4bf453767847e4f469f128d10468dcb1&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
                     <ui:Button text="&gt;" name="1r" class="settingButton"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="BindingContainer" style="flex-grow: 1; flex-direction: row;">
                     <ui:Label text="Spell 2:" name="Label" class="label" style="-unity-text-align: middle-left; width: 200px;"/>
                     <ui:Button text="&lt;" name="2l" class="settingButton"/>
-                    <ui:Label text="Mouse Right" name="2" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=730d0e79abf9eee42b569904409e11a4&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
+                    <ui:Label text="Mouse Right" name="2" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=4bf453767847e4f469f128d10468dcb1&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
                     <ui:Button text="&gt;" name="2r" class="settingButton"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="BindingContainer" style="flex-grow: 1; flex-direction: row;">
                     <ui:Label text="Spell 3:" class="label" style="-unity-text-align: middle-left; width: 200px;"/>
                     <ui:Button text="&lt;" name="3l" class="settingButton"/>
-                    <ui:Label text="Q" name="3" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=730d0e79abf9eee42b569904409e11a4&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
+                    <ui:Label text="Q" name="3" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=4bf453767847e4f469f128d10468dcb1&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
                     <ui:Button text="&gt;" name="3r" class="settingButton"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="BindingContainer" style="flex-grow: 1; flex-direction: row;">
                     <ui:Label text="Spell 4:" class="label" style="-unity-text-align: middle-left; width: 200px;"/>
                     <ui:Button text="&lt;" name="4l" class="settingButton"/>
-                    <ui:Label text="E" name="4" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=730d0e79abf9eee42b569904409e11a4&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
+                    <ui:Label text="E" name="4" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=4bf453767847e4f469f128d10468dcb1&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
                     <ui:Button text="&gt;" name="4r" class="settingButton"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="BindingContainer" style="flex-grow: 1; flex-direction: row;">
                     <ui:Label text="Jump: " class="label" style="-unity-text-align: middle-left; width: 200px;"/>
                     <ui:Button text="&lt;" name="5l" class="settingButton"/>
-                    <ui:Label text="Space" name="5" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=730d0e79abf9eee42b569904409e11a4&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
+                    <ui:Label text="Space" name="5" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=4bf453767847e4f469f128d10468dcb1&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
                     <ui:Button text="&gt;" name="5r" class="settingButton"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="BindingContainer" style="flex-grow: 1; flex-direction: row;">
                     <ui:Label text="Pause: " class="label" style="-unity-text-align: middle-left; width: 200px;"/>
                     <ui:Button text="&lt;" name="6l" class="settingButton"/>
-                    <ui:Label text="Escape" name="6" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=730d0e79abf9eee42b569904409e11a4&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
+                    <ui:Label text="Escape" name="6" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=4bf453767847e4f469f128d10468dcb1&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
                     <ui:Button text="&gt;" name="6r" class="settingButton"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="BindingContainer" style="flex-grow: 1; flex-direction: row;">
                     <ui:Label text="Restart: " class="label" style="-unity-text-align: middle-left; width: 200px;"/>
                     <ui:Button text="&lt;" name="7l" class="settingButton"/>
-                    <ui:Label text="R" name="7" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=730d0e79abf9eee42b569904409e11a4&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
+                    <ui:Label text="R" name="7" class="label" style="-unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/RobotoMono-Regular.ttf?fileID=12800000&amp;guid=4bf453767847e4f469f128d10468dcb1&amp;type=3#RobotoMono-Regular&quot;); width: 400px;"/>
                     <ui:Button text="&gt;" name="7r" class="settingButton"/>
                 </ui:VisualElement>
             </ui:VisualElement>

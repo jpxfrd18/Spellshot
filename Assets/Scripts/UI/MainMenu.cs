@@ -93,14 +93,14 @@ public class MainMenu : MonoBehaviour
 
     private Dictionary<int, LevelInfo> levelInfo = new Dictionary<int, LevelInfo>
     {
-        {1, new LevelInfo("Peasant Uprising", "In a small town deep into the mountains, the peasants have begun to actively rebel against the authority of the crown. The king requests that you crush the rebellion before it spreads. " +
-        "\nObjective: Kill 25 hostile peasant militia OR destroy munitions on top of the hill")},
-        {2, new LevelInfo("Occupied Ruins", "Before the King's army could reach the town that you handled, a nearby warlord snatched up the high ground and started digging in. The king needs you to weaken the resistance." +
-        "\nObjective: Kill 35 enemy soldiers OR kill the warlord on top of the hill")},
-        {3, new LevelInfo("Ogre Extermination", "A camp of ogres have been causing mayhem and assaulting travelers. The king can't tax people who don't arrive." +
-        "\nObjective: Kill 5 Ogres")},
-        {4, new LevelInfo("Castle Invasion", "The king is running low on gold and asks you to requisition some from his neighbor" +
-        "\nObjective: Reach the treasury and recover the gold")}
+        {1, new LevelInfo("Peasant Uprising", "In a small town deep into the mountains, the peasants have begun to actively rebel against the authority of the crown. The king requests that you crush the rebellion before it spreads. ",
+        "Objective: Kill 25 peasant militia\nOR Destroy their munitions")},
+        {2, new LevelInfo("Occupied Ruins", "Before the King's army could reach the town that you handled, a nearby warlord snatched up the high ground and started digging in. The king needs you to weaken the resistance.",
+        "Objective: Kill 35 enemy soldiers\nOR Kill the warlord")},
+        {3, new LevelInfo("Ogre Extermination", "A camp of ogres have been causing mayhem and assaulting travelers. The king can't tax people who don't arrive.",
+        "Objective: Kill 5 Ogres")},
+        {4, new LevelInfo("Castle Invasion", "The king is running low on gold and asks you to requisition some from his neighbor",
+        "Objective: Reach the treasury and recover the gold")}
     };
 
     private Dictionary<int, SpellInfo> spellInfo = new Dictionary<int, SpellInfo>
@@ -1114,7 +1114,7 @@ public class MainMenu : MonoBehaviour
         {
             title.text = levelInfo[level].name;
             description.text = levelInfo[level].description;
-            subtitle.style.display = DisplayStyle.None;
+            subtitle.text = levelInfo[level].objective;
         }
     }
 
@@ -1204,11 +1204,13 @@ public class MainMenu : MonoBehaviour
     {
         public string name;
         public string description;
+        public string objective;
 
-        public LevelInfo(string t, string d)
+        public LevelInfo(string t, string d, string o)
         {
             name = t;
             description = d;
+            objective = o;
         }
     }
 
