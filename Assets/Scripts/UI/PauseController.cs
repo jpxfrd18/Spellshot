@@ -73,8 +73,8 @@ public class PauseController : MonoBehaviour
     private Button gamepadToKeyboard;
     private Button gamepadBackButton;
 
-    private Label healthLabel;
-    private Label manaLabel;
+    private VisualElement healthContainer;
+    private VisualElement manaContainer;
 
     private VisualElement damageRoot;
 
@@ -687,8 +687,8 @@ public class PauseController : MonoBehaviour
         sensitivityLabel = settingsRoot.Q<Label>("SensitivityDisplay");
         volumeLabel = settingsRoot.Q<Label>("VolumeDisplay");
 
-        healthLabel = gameplayRoot.Q<Label>("HealthAmount");
-        manaLabel = gameplayRoot.Q<Label>("ManaAmount");
+        healthContainer = gameplayRoot.Q<VisualElement>("HealthContainer");
+        manaContainer = gameplayRoot.Q<VisualElement>("ManaContainer");
 
         bestTimeLabel = winRoot.Q<Label>("BestTimeDisplay");
         currentTimeLabel = winRoot.Q<Label>("TimeDisplay");
@@ -751,8 +751,11 @@ public class PauseController : MonoBehaviour
 
         sensitivityLabel.text = (playerStatsController.persistant.sensitivity * 100f).ToString("0");
         volumeLabel.text = (playerStatsController.persistant.musicVolume * 100f).ToString("0");
-        healthLabel.text = playerStatsController.health.ToString("0");
-        manaLabel.text = playerStatsController.mana.ToString("0");
+        healthContainer.style.paddingRight = 0;
+        manaContainer.style.paddingRight = 0;
+
+        healthContainer.style.width = playerStatsController.persistant.maxHealth * 4;
+        manaContainer.style.width = playerStatsController.persistant.maxMana * 4;
     }
 
     private void Navigate(Vector2 d)
@@ -853,18 +856,17 @@ public class PauseController : MonoBehaviour
 
     private void OnHealthChanged(int newHealth)
     {
-        healthLabel.text = newHealth.ToString("0");
+        healthContainer.style.paddingRight = 4 * (playerStatsController.persistant.maxHealth - newHealth);
 
         if (newHealth > 0)
         {
             StartCoroutine(DamageRoutine());
         }
-
     }
 
     private void OnManaChanged(int newMana)
     {
-        manaLabel.text = newMana.ToString("0");
+        manaContainer.style.paddingRight = 4 * (playerStatsController.persistant.maxMana - newMana);
     }
 
     private void OnSensitivityUp()

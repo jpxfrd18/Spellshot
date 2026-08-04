@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0bce616d2436d234791d31c929e4f804
+guid: c902282ef8dd3b7418c4b9cbea85f484
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Jersey 20
+  - Inter 28pt
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

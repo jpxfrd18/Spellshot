@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0bce616d2436d234791d31c929e4f804
+guid: 730d0e79abf9eee42b569904409e11a4
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Jersey 20
+  - Roboto Mono
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

@@ -1,11 +1,9 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/style.uss?fileID=7433441132597879392&amp;guid=f467c54525fb7374a8c95ffba3541e8f&amp;type=3#style"/>
-    <ui:VisualElement name="HealthContainer" style="flex-direction: row; padding-left: 20px;">
-        <ui:Label text="Health:" name="HealthLabel" class="statLabel" style="color: rgb(220, 24, 34);"/>
-        <ui:Label text="67" name="HealthAmount" class="statLabel" style="color: rgb(220, 24, 34);"/>
+    <ui:VisualElement name="HealthContainer" style="padding-left: 0; background-color: rgb(50, 50, 50); height: 24px; width: 400px; padding-top: 0; padding-right: 12px; padding-bottom: 0; margin-top: 35px; margin-left: 30px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(26, 26, 26); border-right-color: rgb(26, 26, 26); border-top-color: rgb(26, 26, 26); border-bottom-color: rgb(26, 26, 26);">
+        <ui:VisualElement name="HealthBar" style="background-color: rgb(191, 0, 0); flex-grow: 1;"/>
     </ui:VisualElement>
-    <ui:VisualElement name="ManaContainer" style="flex-direction: row; padding-left: 20px;">
-        <ui:Label text="Mana:" name="ManaLabel" class="statLabel" style="color: rgb(64, 109, 181);"/>
-        <ui:Label text="67" name="ManaAmount" class="statLabel" style="color: rgb(64, 109, 181);"/>
+    <ui:VisualElement name="ManaContainer" style="padding-left: 0; padding-top: 0; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; border-left-color: rgb(26, 26, 26); border-right-color: rgb(26, 26, 26); border-top-color: rgb(26, 26, 26); border-bottom-color: rgb(26, 26, 26); margin-top: 20px; margin-right: 0; margin-bottom: 0; margin-left: 30px; padding-right: 12px; padding-bottom: 0; height: 24px; width: 400px; background-color: rgb(50, 50, 50);">
+        <ui:VisualElement name="ManaBar" style="background-color: rgb(64, 109, 181); flex-grow: 1;"/>
     </ui:VisualElement>
 </ui:UXML>
