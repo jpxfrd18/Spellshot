@@ -4623,7 +4623,7 @@ GameObject:
   - component: {fileID: 3782997300334328566}
   m_Layer: 8
   m_Name: PeasantMilitaDemo
-  m_TagString: Peasant Militia
+  m_TagString: Militia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

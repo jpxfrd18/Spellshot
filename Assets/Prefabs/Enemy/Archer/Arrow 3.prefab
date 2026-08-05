@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a39977b7cc281449d0b63cd1e35080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterTime
-  lifetime: 20
+  lifetime: 5
 --- !u!54 &7607549093965391448
 Rigidbody:
   m_ObjectHideFlags: 0

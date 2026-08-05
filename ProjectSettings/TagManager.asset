@@ -7,12 +7,12 @@ TagManager:
   - Ground
   - Peasant
   - Breakable Object
-  - Peasant Militia
   - Munitions
   - Soldier
   - Enemy
   - Warlord
   - Rock
+  - Militia
   layers:
   - Default
   - TransparentFX

@@ -86,8 +86,8 @@
 
 .label {
     color: rgb(255, 238, 51);
-    font-size: 60px;
-    -unity-text-outline-width: 2px;
+    font-size: 40px;
+    -unity-text-outline-width: 1px;
     -unity-font-definition: url("project://database/Assets/UI%20Toolkit/Fonts/Inter_28pt-Regular.ttf?fileID=12800000&guid=e2ba1fda31e445e4a8514ae443b7ca88&type=3#Inter_28pt-Regular");
     -unity-text-outline-color: rgb(0, 0, 0);
 }

@@ -25,4 +25,9 @@ public class DestroyAfterTime : MonoBehaviour
     {
         cancelled = true;
     }
+
+    public void AddTime(float additionalTime)
+    {
+        lifetime += additionalTime;
+    }
 }

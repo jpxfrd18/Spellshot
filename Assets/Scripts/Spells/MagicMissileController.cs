@@ -80,7 +80,7 @@ public class MagicMissileController : MonoBehaviour
             DestroyAfterTime destroyAfterTime = GetComponent<DestroyAfterTime>();
             if (destroyAfterTime)
             {
-                destroyAfterTime.Cancel();
+                destroyAfterTime.AddTime(3f);
             }
 
             if (!hasSlowed)

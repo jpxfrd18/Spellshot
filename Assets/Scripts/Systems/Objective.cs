@@ -54,4 +54,21 @@ public class Objective : MonoBehaviour
             req.Reset();
         }
     }
+
+    public override string ToString()
+    {
+        if (requirements.Length == 1)
+        {
+            return requirements[0].ToString();
+        }
+
+        string result = "";
+        foreach (Requirement req in requirements)
+        {
+            result += req.ToString() + " AND ";
+        }
+
+        // Remove the trailing " AND "
+        return result.Substring(0, result.Length - 5);
+    }
 }

@@ -13,4 +13,9 @@ public class KillRequirement : Requirement
         }
         return isComplete;
     }
+
+    public override string ToString()
+    {
+        return $"Kill {tagName} {currentCount}/{targetCount}";
+    }
 }

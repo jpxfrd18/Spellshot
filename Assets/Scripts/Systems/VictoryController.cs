@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class VictoryController : MonoBehaviour
     private PauseController pauseController;
     private PlayerStats playerStats;
     public static VictoryController Instance { get; private set; }
+    public event Action<string> OnUpdateObjective;
     private bool winning = false;
 
     private void Awake()
@@ -39,6 +41,8 @@ public class VictoryController : MonoBehaviour
                 break;
             }
         }
+
+        OnUpdateObjective?.Invoke(ToString());
     }
 
     public void PlayerReached(string tag)
@@ -51,6 +55,7 @@ public class VictoryController : MonoBehaviour
                 break;
             }
         }
+        OnUpdateObjective?.Invoke(ToString());
     }
 
     public void Reset()
@@ -80,5 +85,21 @@ public class VictoryController : MonoBehaviour
             pauseController.OnWin();
         }
         winning = false;
+    }
+
+    public override string ToString()
+    {
+        if (objectives.Length == 1)
+        {
+            return objectives[0].ToString();
+        }
+
+        string result = "";
+        foreach (Objective objective in objectives)
+        {
+            result += objective.ToString() + " OR ";
+        }
+        //Remove trailing " OR "
+        return result.Substring(0, result.Length - 4);
     }
 }

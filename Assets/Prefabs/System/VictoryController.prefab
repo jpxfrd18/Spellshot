@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eac6aff7681a8d4f92fa90e06aeb1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KillRequirement
-  tagName: Peasant Milita
+  tagName: Militia
   targetCount: 25
 --- !u!1 &3466001197185733361
 GameObject:

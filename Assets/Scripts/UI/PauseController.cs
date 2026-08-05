@@ -33,7 +33,6 @@ public class PauseController : MonoBehaviour
     private VisualElement gameplayRoot;
     private VisualElement secretRoot;
     private VisualElement winRoot;
-    private VisualElement timerRoot;
     private VisualElement iconRoot;
     private VisualElement keyboardRebindRoot;
     private VisualElement gamepadRebindRoot;
@@ -43,7 +42,6 @@ public class PauseController : MonoBehaviour
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject settingsScreen;
     [SerializeField] private GameObject winScreen;
-    [SerializeField] private GameObject timerScreen;
     [SerializeField] private GameObject secretScreen;
     [SerializeField] private GameObject iconScreen;
     [SerializeField] private GameObject keyboardRebindScreen;
@@ -55,6 +53,7 @@ public class PauseController : MonoBehaviour
     [SerializeField] private float secretHold = 1f;
     [SerializeField] private float secretFadeOut = 4f;
     private PlayerStats playerStatsController;
+    private VictoryController victoryController;
     private bool gamepad;
     private bool damageActive = false;
 
@@ -96,6 +95,7 @@ public class PauseController : MonoBehaviour
     private Label bestTimeLabel;
     private Label currentTimeLabel;
     private Label gameplayTimeLabel;
+    private Label objectiveLabel;
 
     private Dictionary<int, string> actionNames = new Dictionary<int, string>
     {
@@ -113,6 +113,7 @@ public class PauseController : MonoBehaviour
     private void Awake()
     {
         playerStatsController = PlayerStats.Instance;
+        victoryController = VictoryController.Instance;
         Instance = this;
         win = false;
 
@@ -124,7 +125,6 @@ public class PauseController : MonoBehaviour
         settingsRoot = settingsScreen.GetComponent<UIDocument>().rootVisualElement;
         secretRoot = secretScreen.GetComponent<UIDocument>().rootVisualElement;
         winRoot = winScreen.GetComponent<UIDocument>().rootVisualElement;
-        timerRoot = timerScreen.GetComponent<UIDocument>().rootVisualElement;
         iconRoot = iconScreen.GetComponent<UIDocument>().rootVisualElement;
         keyboardRebindRoot = keyboardRebindScreen.GetComponent<UIDocument>().rootVisualElement;
         gamepadRebindRoot = gamepadRebindScreen.GetComponent<UIDocument>().rootVisualElement;
@@ -135,7 +135,6 @@ public class PauseController : MonoBehaviour
         pauseRoot.style.display = DisplayStyle.None;
         settingsRoot.style.display = DisplayStyle.None;
         winRoot.style.display = DisplayStyle.None;
-        timerRoot.style.display = DisplayStyle.Flex;
         secretRoot.style.display = DisplayStyle.Flex;
         iconRoot.style.display = DisplayStyle.Flex;
         keyboardRebindRoot.style.display = DisplayStyle.None;
@@ -145,7 +144,7 @@ public class PauseController : MonoBehaviour
         damageRoot.style.opacity = 0;
         playerStatsController.OnHealthChanged += OnHealthChanged;
         playerStatsController.OnManaChanged += OnManaChanged;
-
+        victoryController.OnUpdateObjective += OnUpdateObjective;
 
         pauseAction = InputSystem.actions.FindAction("Pause");
         playAction = InputSystem.actions.FindAction("Play");
@@ -365,7 +364,6 @@ public class PauseController : MonoBehaviour
         pauseRoot.style.display = DisplayStyle.None;
         settingsRoot.style.display = DisplayStyle.None;
         secretRoot.style.display = DisplayStyle.None;
-        timerRoot.style.display = DisplayStyle.None;
         iconRoot.style.display = DisplayStyle.None;
         winRoot.style.display = DisplayStyle.Flex;
         keyboardRebindRoot.style.display = DisplayStyle.None;
@@ -419,7 +417,6 @@ public class PauseController : MonoBehaviour
         settingsRoot.style.display = DisplayStyle.None;
         secretRoot.style.display = DisplayStyle.None;
         winRoot.style.display = DisplayStyle.None;
-        timerRoot.style.display = DisplayStyle.None;
         iconRoot.style.display = DisplayStyle.None;
         keyboardRebindRoot.style.display = DisplayStyle.None;
         gamepadRebindRoot.style.display = DisplayStyle.None;
@@ -446,7 +443,6 @@ public class PauseController : MonoBehaviour
         settingsRoot.style.display = DisplayStyle.None;
         secretRoot.style.display = DisplayStyle.Flex;
         winRoot.style.display = DisplayStyle.None;
-        timerRoot.style.display = DisplayStyle.Flex;
         iconRoot.style.display = DisplayStyle.Flex;
         keyboardRebindRoot.style.display = DisplayStyle.None;
         gamepadRebindRoot.style.display = DisplayStyle.None;
@@ -692,7 +688,8 @@ public class PauseController : MonoBehaviour
 
         bestTimeLabel = winRoot.Q<Label>("BestTimeDisplay");
         currentTimeLabel = winRoot.Q<Label>("TimeDisplay");
-        gameplayTimeLabel = timerRoot.Q<Label>("Timer");
+        gameplayTimeLabel = gameplayRoot.Q<Label>("Timer");
+        objectiveLabel = gameplayRoot.Q<Label>("ObjectiveLabel");
 
         for (int i = 1; i <= 4; i++)
         {
@@ -756,6 +753,8 @@ public class PauseController : MonoBehaviour
 
         healthContainer.style.width = playerStatsController.persistant.maxHealth * 4;
         manaContainer.style.width = playerStatsController.persistant.maxMana * 4;
+
+        objectiveLabel.text = victoryController.ToString();
     }
 
     private void Navigate(Vector2 d)
@@ -869,6 +868,11 @@ public class PauseController : MonoBehaviour
         manaContainer.style.paddingRight = 4 * (playerStatsController.persistant.maxMana - newMana);
     }
 
+    private void OnUpdateObjective(string newObjective)
+    {
+        objectiveLabel.text = newObjective;
+    }
+
     private void OnSensitivityUp()
     {
         playerStatsController.persistant.IncreaseSensitivity(0.01f);
@@ -921,6 +925,7 @@ public class PauseController : MonoBehaviour
     {
         playerStatsController.OnHealthChanged -= OnHealthChanged;
         playerStatsController.OnManaChanged -= OnManaChanged;
+        victoryController.OnUpdateObjective -= OnUpdateObjective;
         playButton.clicked -= OnPlay;
         settingsButton.clicked -= OnSettings;
         backButton.clicked -= OnBack;
