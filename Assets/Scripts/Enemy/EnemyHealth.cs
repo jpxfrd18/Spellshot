@@ -4,8 +4,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [field: SerializeField] public int manaValue { get; private set; }
-    [SerializeField] private int maxHealth;
-    private int currentHealth;
+    [field: SerializeField] public int maxHealth { get; private set; }
+    public int currentHealth { get; private set; }
 
     public event Action<int> OnDeath;
     public event Action OnDamageTaken;

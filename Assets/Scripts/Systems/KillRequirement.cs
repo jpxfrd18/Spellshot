@@ -16,6 +16,11 @@ public class KillRequirement : Requirement
 
     public override string ToString()
     {
+        if (tagName.Equals("Munitions"))
+        {
+            return $"Destroy {tagName} {currentCount}/{targetCount}";
+        }
+
         return $"Kill {tagName} {currentCount}/{targetCount}";
     }
 }

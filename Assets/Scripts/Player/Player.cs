@@ -4,9 +4,11 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Transform aimTransform;
     private PlayerRef playerRef;
+    public static Player Instance { get; private set; }
 
     private void Awake()
     {
+        Instance = this;
         playerRef = GetComponent<PlayerRef>();
     }
 
