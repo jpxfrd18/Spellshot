@@ -17,7 +17,7 @@
                         <ui:Button text="FL" name="3" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
                             <ui:Label text="1" name="3i" style="position: absolute; top: -20px; left: -20px; color: rgba(0, 0, 0, 0.78); background-color: rgb(140, 195, 227); font-size: 20px; -unity-text-outline-width: 0; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; height: 30px; width: 30px;"/>
                         </ui:Button>
-                        <ui:Button text="?" name="4" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+                        <ui:Button text="LS" name="4" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
                             <ui:Label text="1" name="4i" style="position: absolute; top: -20px; left: -20px; color: rgba(0, 0, 0, 0.78); background-color: rgb(140, 195, 227); font-size: 20px; -unity-text-outline-width: 0; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; height: 30px; width: 30px;"/>
                         </ui:Button>
                         <ui:Button text="?" name="5" class="button" style="width: 100px; height: 100px; font-size: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">

@@ -6,25 +6,25 @@ using UnityEngine;
 public class PersistantPlayerStats : MonoBehaviour
 {
     [field: SerializeField] public float sensitivity { get; private set; }
-    [field: SerializeField] public float maxSpeedGround { get; private set; }
-    [field: SerializeField] public float maxSpeedAir { get; private set; }
-    [field: SerializeField] public float launchSpeed { get; private set; }
-    [field: SerializeField] public float groundAcceleration { get; private set; }
-    [field: SerializeField] public float airAcceleration { get; private set; }
-    [field: SerializeField] public float maxSlopeAngle { get; private set; }
-    [field: SerializeField] public float turnStrength { get; private set; }
-    [field: SerializeField] public float jumpStrength { get; private set; }
-    [field: SerializeField] public float catchUpMultiplier { get; private set; }
-    [field: SerializeField] public float JUMP_BUFFER { get; private set; } = 0.1f;
-    [field: SerializeField] public float COYOTE_TIME { get; private set; } = 0.15f;
-    [field: SerializeField] public float FRICTION_BUFFER { get; private set; } = 0.1f;
-    [field: SerializeField] public float TERMINAL_VELOCITY { get; private set; } = 35f;
-    [field: SerializeField] public float MAX_VERTICAL_VELOCITY { get; private set; } = 30f;
-    [field: SerializeField] public float GRAVITY_DOWN { get; private set; }
-    [field: SerializeField] public float GRAVITY_UP { get; private set; }
-    [field: SerializeField] public int maxMana { get; private set; }
-    [field: SerializeField] public int maxHealth { get; private set; }
-    [field: SerializeField] public float musicVolume { get; private set; } = 0.5f;
+    public float maxSpeedGround { get; private set; } = 6f;
+    public float maxSpeedAir { get; private set; } = 20f;
+    public float launchSpeed { get; private set; } = 30f;
+    public float groundAcceleration { get; private set; } = 300f;
+    public float airAcceleration { get; private set; } = 1f;
+    public float maxSlopeAngle { get; private set; } = 45f;
+    public float turnStrength { get; private set; } = 5f;
+    public float jumpStrength { get; private set; } = 9f;
+    public float catchUpMultiplier { get; private set; } = 3f;
+    public float JUMP_BUFFER { get; private set; } = 0.1f;
+    public float COYOTE_TIME { get; private set; } = 0.15f;
+    public float FRICTION_BUFFER { get; private set; } = 0.1f;
+    public float TERMINAL_VELOCITY { get; private set; } = 35f;
+    public float MAX_VERTICAL_VELOCITY { get; private set; } = 30f;
+    public float GRAVITY_DOWN { get; private set; } = 15f;
+    public float GRAVITY_UP { get; private set; } = 10f;
+    public int maxMana { get; private set; } = 100;
+    public int maxHealth { get; private set; } = 100;
+    public float musicVolume { get; private set; } = 0.5f;
     public event Action<float> OnMusicVolumeChanged;
     public List<float> bestTime { get; private set; } = new List<float>();
     [field: SerializeField] public int latestLevelUnlocked { get; private set; } = 1;
@@ -252,7 +252,6 @@ public class PersistantPlayerStats : MonoBehaviour
         maxMana += amount;
     }
 
-
     /// <returns>Returns true if max mana was successfully reduced</returns>
     public bool DecreaseMaxMana(int amount)
     {
@@ -265,95 +264,6 @@ public class PersistantPlayerStats : MonoBehaviour
         return true;
     }
 
-
-    public void IncreaseGravityDown(float amount)
-    {
-        if (GRAVITY_DOWN + amount > 20f)
-        {
-            GRAVITY_DOWN = 20f;
-            return;
-        }
-
-        GRAVITY_DOWN += amount;
-    }
-
-    public void DecreaseGravityDown(float amount)
-    {
-        if (GRAVITY_DOWN - amount < 10f)
-        {
-            GRAVITY_DOWN = 10f;
-            return;
-        }
-
-        GRAVITY_DOWN -= amount;
-    }
-
-    public void IncreaseGravityUp(float amount)
-    {
-        if (GRAVITY_UP + amount > 15f)
-        {
-            GRAVITY_UP = 15f;
-            return;
-        }
-
-        GRAVITY_UP += amount;
-    }
-
-    public void DecreaseGravityUp(float amount)
-    {
-        if (GRAVITY_UP - amount < 5f)
-        {
-            GRAVITY_UP = 5f;
-            return;
-        }
-
-        GRAVITY_UP -= amount;
-    }
-
-    public void IncreaseMaxSlopeAngle(float amount)
-    {
-        if (maxSlopeAngle + amount > 89f)
-        {
-            maxSlopeAngle = 89f;
-            return;
-        }
-
-        maxSlopeAngle += amount;
-    }
-
-    public void DecreaseMaxSlopeAngle(float amount)
-    {
-        if (maxSlopeAngle - amount < 30f)
-        {
-            maxSlopeAngle = 30f;
-            return;
-        }
-
-        maxSlopeAngle -= amount;
-    }
-
-
-    public void IncreaseTurnStrength(float amount)
-    {
-        if (turnStrength + amount > 10f)
-        {
-            turnStrength = 10f;
-            return;
-        }
-
-        turnStrength += amount;
-    }
-
-    public void DecreaseTurnStrength(float amount)
-    {
-        if (turnStrength - amount < 0f)
-        {
-            turnStrength = 0f;
-            return;
-        }
-
-        turnStrength -= amount;
-    }
 
     public void IncreaseSensitivity(float amount)
     {
@@ -375,115 +285,5 @@ public class PersistantPlayerStats : MonoBehaviour
         }
 
         sensitivity -= amount;
-    }
-
-    public void IncreaseMaxSpeedGround(float amount)
-    {
-        if (maxSpeedGround + amount > 8f)
-        {
-            maxSpeedGround = 8f;
-            return;
-        }
-
-        maxSpeedGround += amount;
-    }
-
-    public void DecreaseMaxSpeedGround(float amount)
-    {
-        if (maxSpeedGround - amount < 4f)
-        {
-            maxSpeedGround = 4f;
-            return;
-        }
-
-        maxSpeedGround -= amount;
-    }
-
-    public void IncreaseMaxSpeedAir(float amount)
-    {
-        if (maxSpeedAir + amount > 24f)
-        {
-            maxSpeedAir = 24f;
-            return;
-        }
-
-        maxSpeedAir += amount;
-    }
-
-    public void DecreaseMaxSpeedAir(float amount)
-    {
-        if (maxSpeedAir - amount < 16f)
-        {
-            maxSpeedAir = 16f;
-            return;
-        }
-
-        maxSpeedAir -= amount;
-    }
-
-    public void IncreaseGroundAcceleration(float amount)
-    {
-        if (groundAcceleration + amount > 500f)
-        {
-            groundAcceleration = 500f;
-            return;
-        }
-
-        groundAcceleration += amount;
-    }
-
-    public void DecreaseGroundAcceleration(float amount)
-    {
-        if (groundAcceleration - amount < 100f)
-        {
-            groundAcceleration = 100f;
-            return;
-        }
-
-        groundAcceleration -= amount;
-    }
-
-    public void IncreaseAirAcceleration(float amount)
-    {
-        if (airAcceleration + amount > 2f)
-        {
-            airAcceleration = 2f;
-            return;
-        }
-
-        airAcceleration += amount;
-    }
-
-    public void DecreaseAirAcceleration(float amount)
-    {
-        if (airAcceleration - amount < 0.5f)
-        {
-            airAcceleration = 0.5f;
-            return;
-        }
-
-        airAcceleration -= amount;
-    }
-
-    public void IncreaseJumpStrength(float amount)
-    {
-        if (jumpStrength + amount > 9f)
-        {
-            jumpStrength = 9f;
-            return;
-        }
-
-        jumpStrength += amount;
-    }
-
-    public void DecreaseJumpStrength(float amount)
-    {
-        if (jumpStrength - amount < 7f)
-        {
-            jumpStrength = 7f;
-            return;
-        }
-
-        jumpStrength -= amount;
     }
 }

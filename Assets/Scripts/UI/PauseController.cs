@@ -961,6 +961,7 @@ public class PauseController : MonoBehaviour
     private IEnumerator SecretRoutine(float fadeIn, float hold, float fadeOut)
     {
         float timer = 0f;
+        objectiveLabel.style.display = DisplayStyle.None;
 
         while (timer < fadeIn)
         {
@@ -987,6 +988,8 @@ public class PauseController : MonoBehaviour
             secretRoot.style.opacity = timer / fadeOut;
             yield return null;
         }
+
+        objectiveLabel.style.display = DisplayStyle.Flex;
     }
 
     private IEnumerator DamageRoutine()
