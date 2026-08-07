@@ -5,7 +5,8 @@ using UnityEngine.InputSystem;
 public class PlayerInputController : MonoBehaviour
 {
     [SerializeField] private InputActionAsset InputActions;
-    [SerializeField] private float controllerTurnRate;
+    [SerializeField] private float controllerMultiplier;
+    private PlayerRef playerRef;
 
     public InputAction jumpAction { get; private set; }
     public Vector2 lookAmt { get; private set; }
@@ -47,7 +48,10 @@ public class PlayerInputController : MonoBehaviour
 
         spell4Action.started += ctx => OnSpellPressed?.Invoke(3);
         spell4Action.canceled += ctx => OnSpellReleased?.Invoke(3);
+
+        playerRef = GetComponent<PlayerRef>();
     }
+
 
     private void Update()
     {
@@ -67,11 +71,11 @@ public class PlayerInputController : MonoBehaviour
 
         if (device is Mouse)
         {
-            lookAmt = lookAction.ReadValue<Vector2>();
+            lookAmt = lookAction.ReadValue<Vector2>() * playerRef.playerStats.persistant.sensitivity;
         }
-        else if (device is Gamepad)
+        else
         {
-            lookAmt = lookAction.ReadValue<Vector2>() * controllerTurnRate; // Scale gamepad look input for better sensitivity
+            lookAmt = lookAction.ReadValue<Vector2>() * playerRef.playerStats.persistant.sensitivity * controllerMultiplier;
         }
     }
 

@@ -177,7 +177,7 @@ public class MainMenu : MonoBehaviour
         navigation = InputSystem.actions.FindAction("Navigate");
         back = InputSystem.actions.FindAction("Cancel");
 
-        gamepad = Gamepad.current != null;
+        gamepad = GamepadActive();
 
         playerStats = PersistantPlayerStats.Instance;
 
@@ -191,7 +191,7 @@ public class MainMenu : MonoBehaviour
                 mainBuilt = true;
                 currentList = MenuNavigation.Instance.mainNodes;
 
-                if (Gamepad.current != null && current != null)
+                if (GamepadActive() && current != null)
                 {
                     current = FindTopLeft(currentList);
                     current.button.Focus();
@@ -208,7 +208,7 @@ public class MainMenu : MonoBehaviour
 
                 currentList = MenuNavigation.Instance.levelSelectNodes;
 
-                if (Gamepad.current != null && current != null)
+                if (GamepadActive() && current != null)
                 {
                     current = FindTopLeft(currentList);
                     current.button.Focus();
@@ -224,7 +224,7 @@ public class MainMenu : MonoBehaviour
                 levelBuilt = true;
                 currentList = MenuNavigation.Instance.levelNodes;
 
-                if (Gamepad.current != null && current != null)
+                if (GamepadActive() && current != null)
                 {
                     current = FindTopLeft(currentList);
                     current.button.Focus();
@@ -241,7 +241,7 @@ public class MainMenu : MonoBehaviour
 
                 currentList = MenuNavigation.Instance.settingsNodes;
 
-                if (Gamepad.current != null && current != null)
+                if (GamepadActive() && current != null)
                 {
                     current = FindTopLeft(currentList);
                     current.button.Focus();
@@ -258,7 +258,7 @@ public class MainMenu : MonoBehaviour
 
                 currentList = MenuNavigation.Instance.controlsNodes;
 
-                if (Gamepad.current != null && current != null)
+                if (GamepadActive() && current != null)
                 {
                     current = FindTopLeft(currentList);
                     current.button.Focus();
@@ -275,7 +275,7 @@ public class MainMenu : MonoBehaviour
 
                 currentList = MenuNavigation.Instance.keyboardNodes;
 
-                if (Gamepad.current != null && current != null)
+                if (GamepadActive() && current != null)
                 {
                     current = FindTopLeft(currentList);
                     current.button.Focus();
@@ -292,7 +292,7 @@ public class MainMenu : MonoBehaviour
 
                 currentList = MenuNavigation.Instance.controllerNodes;
 
-                if (Gamepad.current != null && current != null)
+                if (GamepadActive() && current != null)
                 {
                     current = FindTopLeft(currentList);
                     current.button.Focus();
@@ -323,7 +323,7 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        if (gamepad && Gamepad.current == null)
+        if (gamepad && !GamepadActive())
         {
             gamepad = false;
             for (int i = 1; i <= 7; i++)
@@ -333,11 +333,11 @@ public class MainMenu : MonoBehaviour
                 lbl.text = controlDescriptions[index].start + playerStats.bindingNames[index - 1] + controlDescriptions[index].end;
             }
 
-            look.text = "Looking Around: Move the mouse to look around.";
-            movement.text = "Movement: Use WASD or the arrow keys to move.";
+            look.text = "Looking Around: Move the mouse or use the arrow keys to look around.";
+            movement.text = "Movement: Use WASD to move.";
             current = null;
         }
-        else if (!gamepad && Gamepad.current != null)
+        else if (!gamepad && GamepadActive())
         {
             gamepad = true;
             for (int i = 1; i <= 7; i++)
@@ -567,7 +567,7 @@ public class MainMenu : MonoBehaviour
             Label label = keyboardRebindRoot.Q<Label>(index.ToString());
             Label lbl = controlsRoot.Q<Label>(index.ToString());
 
-            if (Gamepad.current == null)
+            if (!GamepadActive())
             {
                 label.text = playerStats.bindingNames[index - 1];
             }
@@ -576,7 +576,7 @@ public class MainMenu : MonoBehaviour
             {
                 playerStats.UpdateBindingName(index - 1, KeyboardRebinder.Instance.Increment(InputActions, actionNames[index]));
                 label.text = playerStats.bindingNames[index - 1];
-                if (Gamepad.current == null)
+                if (!GamepadActive())
                 {
                     lbl.text = controlDescriptions[index].start + playerStats.bindingNames[index - 1] + controlDescriptions[index].end;
                 }
@@ -586,7 +586,7 @@ public class MainMenu : MonoBehaviour
             {
                 playerStats.UpdateBindingName(index - 1, KeyboardRebinder.Instance.Decrement(InputActions, actionNames[index]));
                 label.text = playerStats.bindingNames[index - 1];
-                if (Gamepad.current == null)
+                if (!GamepadActive())
                 {
                     lbl.text = controlDescriptions[index].start + playerStats.bindingNames[index - 1] + controlDescriptions[index].end;
                 }
@@ -601,7 +601,7 @@ public class MainMenu : MonoBehaviour
             Button rightButton = controllerRebindRoot.Q<Button>(index.ToString() + "r");
             Label label = controllerRebindRoot.Q<Label>(index.ToString());
 
-            if (Gamepad.current != null)
+            if (GamepadActive())
             {
                 label.text = playerStats.controllerBindingNames[index - 1];
             }
@@ -679,7 +679,7 @@ public class MainMenu : MonoBehaviour
             int index = i;
             Label lbl = controlsRoot.Q<Label>(index.ToString());
 
-            if (Gamepad.current == null)
+            if (!GamepadActive())
             {
                 lbl.text = controlDescriptions[index].start + playerStats.bindingNames[index - 1] + controlDescriptions[index].end;
             }
@@ -695,10 +695,10 @@ public class MainMenu : MonoBehaviour
 
         movement = controlsRoot.Q<Label>("Movement");
         look = controlsRoot.Q<Label>("Look");
-        if (Gamepad.current == null)
+        if (!GamepadActive())
         {
-            look.text = "Looking Around: Move the mouse to look around.";
-            movement.text = "Movement: Use WASD or the arrow keys to move.";
+            look.text = "Looking Around: Move the mouse or use the arrow keys to look around.";
+            movement.text = "Movement: Use WASD to move.";
         }
         else
         {
@@ -1237,6 +1237,13 @@ public class MainMenu : MonoBehaviour
             end = e;
         }
     }
+
+    private bool GamepadActive()
+    {
+        return Gamepad.current != null
+            && Gamepad.current.name != "XInputControllerWindows";
+    }
+
 
     #endregion
 }

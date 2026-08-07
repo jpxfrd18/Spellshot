@@ -23,7 +23,7 @@ public class RotateYaw : MonoBehaviour
     {
         Vector2 look = playerRef.playerInput.lookAmt;
 
-        float yawDelta = look.x * playerRef.playerStats.persistant.sensitivity;
+        float yawDelta = look.x;
 
         yRotation += yawDelta;
 

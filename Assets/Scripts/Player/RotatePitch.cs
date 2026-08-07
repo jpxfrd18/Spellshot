@@ -14,7 +14,7 @@ public class RotatePitch : MonoBehaviour
     {
         Vector2 look = playerRef.playerInput.lookAmt;
 
-        float pitchDelta = look.y * playerRef.playerStats.persistant.sensitivity;
+        float pitchDelta = look.y;
 
         xRotation -= pitchDelta;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
