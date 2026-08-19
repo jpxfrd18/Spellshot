@@ -7,9 +7,15 @@ public class Launch : SpellModule
 
     public override void Cast(Player player)
     {
-        if (player.Stats.DecreaseMana(manaCost))
+        if (!player.Stats.DecreaseMana(manaCost))
         {
-            player.Motor.Launch(player.AimForward);
+            if (player.Stats.DecreaseHealth(2 * manaCost))
+            {
+                return;
+            }
         }
+
+        player.Motor.Launch(player.AimForward);
+
     }
 }

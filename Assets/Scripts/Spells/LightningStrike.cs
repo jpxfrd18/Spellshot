@@ -16,14 +16,19 @@ public class LightningStrike : SpellModule
     {
         if (Physics.Raycast(player.AimSource, player.AimForward, out RaycastHit hit, 100f, mask))
         {
-            if (player.Stats.DecreaseMana(manaCost))
+            if (!player.Stats.DecreaseMana(manaCost))
             {
-                Vector3 toPlayer = player.transform.position - hit.point;
-                toPlayer.y = 0f;
-                toPlayer.Normalize();
-
-                GameObject lightning = Instantiate(lightningPrefab, hit.point, Quaternion.LookRotation(toPlayer, Vector3.up));
+                if (player.Stats.DecreaseHealth(2 * manaCost))
+                {
+                    return;
+                }
             }
+
+            Vector3 toPlayer = player.transform.position - hit.point;
+            toPlayer.y = 0f;
+            toPlayer.Normalize();
+
+            GameObject lightning = Instantiate(lightningPrefab, hit.point, Quaternion.LookRotation(toPlayer, Vector3.up));
         }
     }
 }

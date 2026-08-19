@@ -624,26 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatsController
   <sensitivity>k__BackingField: 0.2
-  <maxSpeedGround>k__BackingField: 6
-  <maxSpeedAir>k__BackingField: 20
-  <launchSpeed>k__BackingField: 30
-  <groundAcceleration>k__BackingField: 300
-  <airAcceleration>k__BackingField: 1
-  <maxSlopeAngle>k__BackingField: 45
-  <turnStrength>k__BackingField: 5
-  <jumpStrength>k__BackingField: 9
-  <catchUpMultiplier>k__BackingField: 3
-  <JUMP_BUFFER>k__BackingField: 0.2
-  <COYOTE_TIME>k__BackingField: 0.2
-  <FRICTION_BUFFER>k__BackingField: 0.1
-  <TERMINAL_VELOCITY>k__BackingField: 40
-  <MAX_VERTICAL_VELOCITY>k__BackingField: 20
-  <GRAVITY_DOWN>k__BackingField: 15
-  <GRAVITY_UP>k__BackingField: 10
-  <maxMana>k__BackingField: 100
-  <maxHealth>k__BackingField: 100
-  <musicVolume>k__BackingField: 1
-  <latestLevelUnlocked>k__BackingField: 1
+  <latestLevelUnlocked>k__BackingField: 3
   unlockedSpellsInspector: 010000000200000006000000070000000a000000
   <spells>k__BackingField: 00000000000000000000000000000000
 --- !u!4 &1404606222

@@ -11,17 +11,21 @@ public class Portal : SpellModule
     {
         if (!circle)
         {
-            if (player.Stats.DecreaseMana(manaCost))
+            if (!player.Stats.DecreaseMana(manaCost))
             {
-                Vector3 direction = player.AimForward;
-                direction.y = 0;
-                circle = Instantiate(circlePrefab, player.AimSource, Quaternion.identity);
-
-                if (direction.sqrMagnitude > 0.01)
+                if (player.Stats.DecreaseHealth(2 * manaCost))
                 {
-                    circle.transform.forward = direction.normalized;
+                    return;
                 }
+            }
+            
+            Vector3 direction = player.AimForward;
+            direction.y = 0;
+            circle = Instantiate(circlePrefab, player.AimSource, Quaternion.identity);
 
+            if (direction.sqrMagnitude > 0.01)
+            {
+                circle.transform.forward = direction.normalized;
             }
         }
         else

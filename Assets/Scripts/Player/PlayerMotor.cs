@@ -371,7 +371,7 @@ public class PlayerMotor : MonoBehaviour
     public void Gust()
     {
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, 0f), rb.linearVelocity.z);
-        rb.AddForce(Vector3.up * playerRef.playerStats.persistant.jumpStrength * 1.5f, ForceMode.Impulse);
+        rb.AddForce(Vector3.up * playerRef.playerStats.persistant.jumpStrength * 1.4f, ForceMode.Impulse);
 
         if (playerRef.playerJump.canJump)
         {

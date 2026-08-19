@@ -7,9 +7,14 @@ public class Gust : SpellModule
 
     public override void Cast(Player player)
     {
-        if (player.Stats.DecreaseMana(manaCost))
+        if (!player.Stats.DecreaseMana(manaCost))
         {
-            player.Motor.Gust();
+            if (player.Stats.DecreaseHealth(2 * manaCost))
+            {
+                return;
+            }
         }
+
+        player.Motor.Gust();
     }
 }

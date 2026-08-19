@@ -20,11 +20,11 @@ public class PersistantPlayerStats : MonoBehaviour
     public float FRICTION_BUFFER { get; private set; } = 0.1f;
     public float TERMINAL_VELOCITY { get; private set; } = 35f;
     public float MAX_VERTICAL_VELOCITY { get; private set; } = 30f;
-    public float GRAVITY_DOWN { get; private set; } = 15f;
+    public float GRAVITY_DOWN { get; private set; } = 19f;
     public float GRAVITY_UP { get; private set; } = 10f;
     public int maxMana { get; private set; } = 100;
     public int maxHealth { get; private set; } = 100;
-    public float musicVolume { get; private set; } = 0.5f;
+    public float musicVolume { get; private set; } = 1f;
     public event Action<float> OnMusicVolumeChanged;
     public List<float> bestTime { get; private set; } = new List<float>();
     [field: SerializeField] public int latestLevelUnlocked { get; private set; } = 1;

@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57efc6994aaf5d94d8752c9ccbfb207c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  manaCost: 8
+  manaCost: 10
