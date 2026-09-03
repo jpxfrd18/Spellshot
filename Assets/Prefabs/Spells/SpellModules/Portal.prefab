@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   manaCost: 10
-  circlePrefab: {fileID: 8277424212556144102, guid: 9f4431afcb5ae054b8ecc978fa43bc3f, type: 3}
+  minDistance: 10

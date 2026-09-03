@@ -129,6 +129,12 @@ public class EnemyFollow : MonoBehaviour
 
     private void Aggro()
     {
+        if (!player)
+        {
+            LeaveAggro();
+            return;
+        }
+
         Vector3 playerHorizontal = new Vector3(player.transform.position.x, root.position.y, player.transform.position.z);
         Vector3 distance = playerHorizontal - root.position;
 

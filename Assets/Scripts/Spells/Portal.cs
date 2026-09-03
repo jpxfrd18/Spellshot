@@ -4,38 +4,48 @@ public class Portal : SpellModule
 {
     public override SpellCastType CastType { get; } = SpellCastType.Press;
     [SerializeField] private int manaCost;
-    [SerializeField] private GameObject circlePrefab;
-    private GameObject circle = null;
-
+    [SerializeField] private float minDistance;
     public override void Cast(Player player)
     {
-        if (!circle)
+        Enemy enemy = FindEnemy(player);
+        if (enemy == null)
         {
-            if (!player.Stats.DecreaseMana(manaCost))
-            {
-                if (player.Stats.DecreaseHealth(2 * manaCost))
-                {
-                    return;
-                }
-            }
-            
-            Vector3 direction = player.AimForward;
-            direction.y = 0;
-            circle = Instantiate(circlePrefab, player.AimSource, Quaternion.identity);
+            return;
+        }
 
-            if (direction.sqrMagnitude > 0.01)
+        if (player.Stats.DecreaseMana(manaCost))
+        {
+            player.Motor.Teleport(enemy.enemyTransform.position);
+        }
+    }
+
+    private Enemy FindEnemy(Player player)
+    {
+        Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
+
+        if (enemies.Length == 0)
+        {
+            return null;
+        }
+
+        float closestDistance = float.MaxValue;
+        Enemy closestEnemy = null;
+
+        foreach (Enemy e in enemies)
+        {
+            float distance = Vector3.Distance(player.AimSource, e.enemyTransform.position);
+            if (distance < closestDistance)
             {
-                circle.transform.forward = direction.normalized;
+                closestDistance = distance;
+                closestEnemy = e;
+            }
+
+            if (distance < minDistance)
+            {
+                return null;
             }
         }
-        else
-        {
-            player.Motor.Teleport(circle.transform.position);
-            player.Motor.SetYaw(circle.transform.forward);
-            player.Motor.SetVelocityDirection(circle.transform.forward);
-            player.Motor.MultiplyVelocity(0.8f);
-            Destroy(circle);
-            circle = null;
-        }
+
+        return closestEnemy;
     }
 }

@@ -28,7 +28,7 @@ public class LightningStrike : SpellModule
             toPlayer.y = 0f;
             toPlayer.Normalize();
 
-            GameObject lightning = Instantiate(lightningPrefab, hit.point, Quaternion.LookRotation(toPlayer, Vector3.up));
+            Instantiate(lightningPrefab, hit.point, Quaternion.LookRotation(toPlayer, Vector3.up));
         }
     }
 }

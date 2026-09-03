@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   projectilePrefab: {fileID: 4186314681942513439, guid: ea0a3f1272d71ec47be8140e247e7450, type: 3}
   manaCost: 20
-  initialSpeed: 18
+  initialSpeed: 15
