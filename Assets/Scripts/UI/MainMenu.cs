@@ -105,16 +105,16 @@ public class MainMenu : MonoBehaviour
 
     private Dictionary<int, SpellInfo> spellInfo = new Dictionary<int, SpellInfo>
     {
-        {1, new SpellInfo("Magic Missile", "Cost: 4 mana\nDamage: 5 damage\nFire a small dart of magical energy that homes on the nearest target, resulting in minor damage.\nThis is the first spell an initiate learns at The Academy.")},
-        {2, new SpellInfo("Fireball", "Cost: 20 mana\nDamage: 30 damage\nSummon a large ball of fire that explodes on impact.\nKnowledge of this spell is restricted to senior mages because the caster can get caught in the blast.")},
-        {3, new SpellInfo("Force Lance", "Cost: 10 mana\nDamage: 15 damage\nFire a spear of pure magical energy, piercing through all matter.\nIn the Academy, wizards are taught that matter includes everything from stone to flesh.")},
-        {4, new SpellInfo("Lightning Strike", "Cost: 20 mana\nDamage: 50 damage\nCall down a bolt of lightning from the heavens to instantly smite your enemies.\nFew are known to have survived a direct hit.")},
+        {1, new SpellInfo("Magic Missile", "Cost: 4 mana\nDamage: 5 damage\nRange: 30 meters\nFire a small dart of magical energy that homes on the nearest target, resulting in minor damage.\nThis is the first spell an initiate learns at The Academy.")},
+        {2, new SpellInfo("Fireball", "Cost: 20 mana\nDamage: 30 damage\nRange: 18 meters\nSummon a large ball of fire that explodes on impact.\nKnowledge of this spell is restricted to senior mages because the caster can get caught in the blast.")},
+        {3, new SpellInfo("Force Lance", "Cost: 10 mana\nDamage: 15 damage\nRange: 105 meters\nFire a spear of pure magical energy, piercing through all matter.\nIn the Academy, wizards are taught that matter includes everything from stone to flesh.")},
+        {4, new SpellInfo("Lightning Strike", "Cost: 20 mana\nDamage: 50 damage\nRange: 100 meters\nCall down a bolt of lightning from the heavens to instantly smite your enemies.\nFew are known to have survived a direct hit.")},
         {5, new SpellInfo("Mana Drain", "Cost: 0 mana\nDrain the mana from a nearby creature, restoring your own.\nThis spell is unique in that is uses the target's mana to power the spell.")},
-        {6, new SpellInfo("Launch", "Cost: 20 mana\nLaunches the caster at incredible speeds in any direction they choose.\nInterestingly, instead of applying force, this spell appears to directly overwrite your velocity.\nFurther study is required to determine the exact speed.")},
-        {7, new SpellInfo("Gust", "Cost: 8 mana\nSummon a small burst of air, pushing the caster up into the sky.\n")},
-        {8, new SpellInfo("Tether", "Cost: 4 mana per second\nBind yourself to the ground or a nearby inanimate object, pulling yourself towards it.\nFew realize that Tether can also be used to pull mana orbs towards the caster.")},
-        {9, new SpellInfo("Shield", "Cost: 10 mana per second\nCreate a barrier of magical energy around the caster, resulting in complete invincibility.\nSenior mages understand that overuse of this spell quickly drains mana needed to fight")},
-        {10, new SpellInfo("Portal", "Cost: 10 mana\n Create a portal at the caster's location. Recasting the spell will teleport the caster to the portal.")}
+        {6, new SpellInfo("Launch", "Cost: 30 mana\nLaunches the caster at incredible speeds in any direction they choose.\nInterestingly, instead of applying force, this spell appears to directly overwrite your velocity.\nFurther study is required to determine the exact speed.")},
+        {7, new SpellInfo("Gust", "Cost: 12 mana\nSummon a large burst of air, pushing the caster up into the sky.\nWizards well-practiced in the use of this spell are able to cast it repeatedly to fly through the air.")},
+        {8, new SpellInfo("Tether", "Cost: 4 mana per second\nRange: 50 meters\nBind yourself to the terrain, pulling yourself towards it.\n Experienced mages have discovered that the force of the tether is constant regardless of distance.")},
+        {9, new SpellInfo("Draw", "Cost: 0 mana\nRange: 50 meters\nPulls a mana orb towards the caster at great speeds.\nNobody knows why mana sometimes coalesces into orbs, but they are a great source of power for those who practice the arcane arts.")},
+        {10, new SpellInfo("Portal", "Cost: 10 mana\nRange: Unlimited\nInstantly teleport to the nearest living being.\nMana naturally flows toward all living things. All a wizard must do is to follow the current.")}
     };
 
     private Dictionary<int, string> actionNames = new Dictionary<int, string>

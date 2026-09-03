@@ -9,6 +9,6 @@ public enum SpellType
     Launch = 6,
     Gust = 7,
     Tether = 8,
-    Shield = 9,
+    Draw = 9,
     Portal = 10
 }

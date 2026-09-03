@@ -737,8 +737,8 @@ public class PauseController : MonoBehaviour
                 case SpellType.Tether:
                     iconLabel.text = "TE";
                     break;
-                case SpellType.Shield:
-                    iconLabel.text = "SH";
+                case SpellType.Draw:
+                    iconLabel.text = "DR";
                     break;
                 case SpellType.Portal:
                     iconLabel.text = "PO";
