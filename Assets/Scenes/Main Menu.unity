@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatsController
   <sensitivity>k__BackingField: 0.2
-  <latestLevelUnlocked>k__BackingField: 3
+  <latestLevelUnlocked>k__BackingField: 1
   unlockedSpellsInspector: 010000000200000006000000070000000a000000
   <spells>k__BackingField: 00000000000000000000000000000000
 --- !u!4 &1404606222
