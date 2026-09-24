@@ -1,13 +1,20 @@
+using System;
 using UnityEngine;
 
-public class EnemyDamage : MonoBehaviour
+public class EnemyDamageTrigger : MonoBehaviour
 {
-    [SerializeField] private int damage;
     private bool hit = false;
+    public event Action onHit;
+    public event Action onDisable;
 
     private void OnEnable()
     {
         hit = false;
+    }
+
+    private void OnDisable()
+    {
+        onDisable?.Invoke();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,7 +27,7 @@ public class EnemyDamage : MonoBehaviour
         if (!hit && other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             hit = true;
-            PlayerStats.Instance.DecreaseHealth(damage);
+            onHit?.Invoke();
         }
     }
 }
