@@ -51,7 +51,23 @@ public class RespawnManager : MonoBehaviour
     private IEnumerator RespawnRoutine()
     {
         yield return null;
+        Time.timeScale = 0;
+        SceneLoadCamera.Instance.Enable();
+
+        Scene environment = SceneManager.GetActiveScene();
+        string gameplayName = environment.name.Substring(0, environment.name.Length - 3);
+        AsyncOperation op = SceneManager.UnloadSceneAsync(gameplayName);
+        while (!op.isDone)
+        {
+            yield return null;
+        }
+        yield return null;
+
+        SceneManager.LoadScene(gameplayName, LoadSceneMode.Additive);
+        yield return null;
+
+        Time.timeScale = 1;
         IsPlayerDead = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneLoadCamera.Instance.Disable();
     }
 }

@@ -89,6 +89,10 @@ public class MainMenu : MonoBehaviour
     private Button leftRestart;
     private bool controllerBuilt = false;
 
+    [SerializeField] private GameObject loadingScreen;
+    private VisualElement loadingRoot;
+    private Label loadingLabel;
+
     private bool gamepad;
 
     private Dictionary<int, LevelInfo> levelInfo = new Dictionary<int, LevelInfo>
@@ -148,6 +152,7 @@ public class MainMenu : MonoBehaviour
         controlsRoot = controlsScreen.GetComponent<UIDocument>().rootVisualElement;
         keyboardRebindRoot = keyboardRebindScreen.GetComponent<UIDocument>().rootVisualElement;
         controllerRebindRoot = controllerRebindScreen.GetComponent<UIDocument>().rootVisualElement;
+        loadingRoot = loadingScreen.GetComponent<UIDocument>().rootVisualElement;
 
         noFocus = mainRoot.Q<Button>("NoFocus");
         popup = levelRoot.Q<VisualElement>("Popup");
@@ -705,6 +710,8 @@ public class MainMenu : MonoBehaviour
             look.text = "Looking Around: Move the Right Stick to look around.";
             movement.text = "Movement: Use the Left Stick to move.";
         }
+
+        loadingLabel = loadingRoot.Q<Label>("Loading");
     }
     #endregion
 
@@ -719,6 +726,7 @@ public class MainMenu : MonoBehaviour
         mainRoot.style.display = DisplayStyle.Flex;
         keyboardRebindRoot.style.display = DisplayStyle.None;
         controllerRebindRoot.style.display = DisplayStyle.None;
+        loadingRoot.style.display = DisplayStyle.None;
         currentList = MenuNavigation.Instance.mainNodes;
 
         if (current != null && MenuNavigation.Instance.mainNodes.Count > 0)
@@ -737,6 +745,7 @@ public class MainMenu : MonoBehaviour
         levelRoot.style.display = DisplayStyle.None;
         keyboardRebindRoot.style.display = DisplayStyle.None;
         controllerRebindRoot.style.display = DisplayStyle.None;
+        loadingRoot.style.display = DisplayStyle.None;
         currentList = MenuNavigation.Instance.levelSelectNodes;
 
         if (current != null && MenuNavigation.Instance.levelSelectNodes.Count > 0)
@@ -756,6 +765,7 @@ public class MainMenu : MonoBehaviour
         keyboardRebindRoot.style.display = DisplayStyle.None;
         controllerRebindRoot.style.display = DisplayStyle.None;
         popup.style.display = DisplayStyle.None;
+        loadingRoot.style.display = DisplayStyle.None;
         currentList = MenuNavigation.Instance.levelNodes;
 
         if (current != null && MenuNavigation.Instance.levelNodes.Count > 0)
@@ -774,6 +784,7 @@ public class MainMenu : MonoBehaviour
         levelRoot.style.display = DisplayStyle.None;
         keyboardRebindRoot.style.display = DisplayStyle.None;
         controllerRebindRoot.style.display = DisplayStyle.None;
+        loadingRoot.style.display = DisplayStyle.None;
         currentList = MenuNavigation.Instance.settingsNodes;
 
         if (current != null && MenuNavigation.Instance.settingsNodes.Count > 0)
@@ -792,6 +803,7 @@ public class MainMenu : MonoBehaviour
         levelRoot.style.display = DisplayStyle.None;
         keyboardRebindRoot.style.display = DisplayStyle.None;
         controllerRebindRoot.style.display = DisplayStyle.None;
+        loadingRoot.style.display = DisplayStyle.None;
         currentList = MenuNavigation.Instance.controlsNodes;
 
         if (current != null && MenuNavigation.Instance.controlsNodes.Count > 0)
@@ -810,6 +822,7 @@ public class MainMenu : MonoBehaviour
         settingsRoot.style.display = DisplayStyle.None;
         levelRoot.style.display = DisplayStyle.None;
         controllerRebindRoot.style.display = DisplayStyle.None;
+        loadingRoot.style.display = DisplayStyle.None;
         currentList = MenuNavigation.Instance.keyboardNodes;
 
         if (current != null && MenuNavigation.Instance.keyboardNodes.Count > 0)
@@ -828,6 +841,7 @@ public class MainMenu : MonoBehaviour
         levelSelectRoot.style.display = DisplayStyle.None;
         settingsRoot.style.display = DisplayStyle.None;
         levelRoot.style.display = DisplayStyle.None;
+        loadingRoot.style.display = DisplayStyle.None;
         currentList = MenuNavigation.Instance.controllerNodes;
 
         if (current != null && MenuNavigation.Instance.controllerNodes.Count > 0)
@@ -835,6 +849,19 @@ public class MainMenu : MonoBehaviour
             current = FindTopLeft(MenuNavigation.Instance.controllerNodes);
             current.button.Focus();
         }
+    }
+
+    private void ToLoading()
+    {
+        controllerRebindRoot.style.display = DisplayStyle.None;
+        keyboardRebindRoot.style.display = DisplayStyle.None;
+        controlsRoot.style.display = DisplayStyle.None;
+        mainRoot.style.display = DisplayStyle.None;
+        levelSelectRoot.style.display = DisplayStyle.None;
+        settingsRoot.style.display = DisplayStyle.None;
+        levelRoot.style.display = DisplayStyle.None;
+        loadingRoot.style.display = DisplayStyle.Flex;
+        currentList = null;
     }
 
     private void OnQuit()
@@ -1194,6 +1221,7 @@ public class MainMenu : MonoBehaviour
     private void LoadLevel()
     {
         popup.style.display = DisplayStyle.None;
+        ToLoading();
         SceneLoader.Instance.LoadLevel(level);
     }
 

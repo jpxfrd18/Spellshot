@@ -13,7 +13,7 @@ public class Billboard : MonoBehaviour
         enemyHealth = GetComponentInParent<EnemyHealth>();
         if (enemyHealth != null)
         {
-            enemyHealth.OnDamageTaken += UpdateHealthDisplay;
+            enemyHealth.OnHealthChange += UpdateHealthDisplay;
         }
 
         player = Player.Instance;
@@ -30,15 +30,15 @@ public class Billboard : MonoBehaviour
 
     private void UpdateHealthDisplay()
     {
-        healthBar.enabled = enemyHealth.currentHealth > 0;
-        healthBarBackground.enabled = enemyHealth.currentHealth > 0;
+        healthBar.enabled = enemyHealth.currentHealth > 0 && enemyHealth.currentHealth < enemyHealth.maxHealth;
+        healthBarBackground.enabled = enemyHealth.currentHealth > 0 && enemyHealth.currentHealth < enemyHealth.maxHealth;
     }
 
     private void OnDestroy()
     {
         if (enemyHealth != null)
         {
-            enemyHealth.OnDamageTaken -= UpdateHealthDisplay;
+            enemyHealth.OnHealthChange -= UpdateHealthDisplay;
         }
     }
 }

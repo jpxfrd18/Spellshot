@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth { get; private set; }
 
     public event Action<int> OnDeath;
-    public event Action OnDamageTaken;
+    public event Action OnHealthChange;
 
     public void Awake()
     {
@@ -20,13 +20,32 @@ public class EnemyHealth : MonoBehaviour
         if (amount > 0)
         {
             currentHealth -= amount;
-            OnDamageTaken?.Invoke();
+            OnHealthChange?.Invoke();
         }
 
         if (currentHealth <= 0)
         {
             Die();
         }
+    }
+
+    public void IncreaseHealth(int amount)
+    {
+        if (currentHealth == maxHealth || amount < 1)
+        {
+            return;
+        }
+
+        if (currentHealth + amount > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else
+        {
+            currentHealth += amount;
+        }
+
+        OnHealthChange?.Invoke();
     }
 
     private void Die()

@@ -23,7 +23,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadLevel(int levelNum)
     {
         Destroy(MusicPlayer.Instance.gameObject);
-        StartCoroutine(LoadSceneRoutine("Level" + levelNum.ToString()));
+        StartCoroutine(LoadLevelRoutine("Level" + levelNum.ToString(), "Level" + levelNum.ToString() + "Env"));
     }
 
     public void LoadMainMenu()
@@ -48,5 +48,25 @@ public class SceneLoader : MonoBehaviour
     {
         yield return null;
         SceneManager.LoadScene(sceneName);
+    }
+
+    private IEnumerator LoadLevelRoutine(string sceneName1, string sceneName2)
+    {
+        yield return null;
+
+        Time.timeScale = 0;
+        SceneLoadCamera.Instance.Enable();
+        AsyncOperation op = SceneManager.LoadSceneAsync(sceneName2);
+        while (!op.isDone)
+        {
+            yield return null;
+        }
+        yield return null;
+
+        SceneManager.LoadScene(sceneName1, LoadSceneMode.Additive);
+        yield return null;
+
+        Time.timeScale = 1;
+        SceneLoadCamera.Instance.Disable();
     }
 }

@@ -10,7 +10,7 @@ public class EnemyHealthDisplay : MonoBehaviour
         enemyHealth = GetComponentInParent<EnemyHealth>();
         if (enemyHealth != null)
         {
-            enemyHealth.OnDamageTaken += UpdateHealthDisplay;
+            enemyHealth.OnHealthChange += UpdateHealthDisplay;
         }
     }
 
@@ -23,7 +23,7 @@ public class EnemyHealthDisplay : MonoBehaviour
     {
         if (enemyHealth != null)
         {
-            enemyHealth.OnDamageTaken -= UpdateHealthDisplay;
+            enemyHealth.OnHealthChange -= UpdateHealthDisplay;
         }
     }
 }

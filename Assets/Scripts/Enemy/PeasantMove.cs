@@ -28,7 +28,6 @@ public class PeasantMove : MonoBehaviour
     private Vector3 noise = Vector3.zero;
     private float noiseTimer = 0;
     public Transform Root => root;
-    private float turnSpeed;
     private HashSet<Transform> peasants;
 
 
@@ -49,6 +48,15 @@ public class PeasantMove : MonoBehaviour
         if (RespawnManager.Instance.IsPlayerDead || PauseController.Instance.isPaused)
         {
             return;
+        }
+
+        if (player == null)
+        {
+            player = PlayerSpawner.Instance.playerTransform;
+            if (player == null)
+            {
+                return;
+            }
         }
 
         Vector3 playerHorizontal = new Vector3(player.position.x, root.position.y, player.position.z);

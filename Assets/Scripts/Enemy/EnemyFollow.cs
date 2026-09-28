@@ -38,12 +38,12 @@ public class EnemyFollow : MonoBehaviour
 
     private void OnEnable()
     {
-        health.OnDamageTaken += HandleDamageTaken;
+        health.OnHealthChange += HandleDamageTaken;
     }
 
     private void OnDisable()
     {
-        health.OnDamageTaken -= HandleDamageTaken;
+        health.OnHealthChange -= HandleDamageTaken;
     }
 
     private void Interest(GameObject p)
@@ -52,7 +52,6 @@ public class EnemyFollow : MonoBehaviour
         {
             return;
         }
-
         player = p;
         interest = true;
     }
@@ -279,8 +278,7 @@ public class EnemyFollow : MonoBehaviour
     private bool CheckLineOfSight()
     {
         Vector3 direction = (player.transform.position - eye.transform.position).normalized;
-
-        if (Physics.Raycast(eye.transform.position, direction, out RaycastHit hit, 40f, layer))
+        if (Physics.Raycast(eye.transform.position, direction, out RaycastHit hit, 100f, layer))
         {
             return hit.collider.gameObject.layer == LayerMask.NameToLayer("Player");
         }
