@@ -13,6 +13,7 @@ TagManager:
   - Warlord
   - Rock
   - Militia
+  - Ogre
   layers:
   - Default
   - TransparentFX

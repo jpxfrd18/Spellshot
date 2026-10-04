@@ -77,7 +77,7 @@ public class PersistantPlayerStats : MonoBehaviour
     public void LevelComplete(int level)
     {
         //Temporary
-        if (level == 2)
+        if (level == 3)
         {
             return;
         }
