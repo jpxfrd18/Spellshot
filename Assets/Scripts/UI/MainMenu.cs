@@ -118,7 +118,7 @@ public class MainMenu : MonoBehaviour
         {7, new SpellInfo("Gust", "Cost: 12 mana\nSummon a large burst of air, pushing the caster up into the sky.\nWizards well-practiced in the use of this spell are able to cast it repeatedly to fly through the air.")},
         {8, new SpellInfo("Tether", "Cost: 4 mana per second\nRange: 50 meters\nBind yourself to the terrain, pulling yourself towards it.\n Experienced mages have discovered that the force of the tether is constant regardless of distance.")},
         {9, new SpellInfo("Draw", "Cost: 0 mana\nRange: 50 meters\nPulls a mana orb towards the caster at great speeds.\nNobody knows why mana sometimes coalesces into orbs, but they are a great source of power for those who practice the arcane arts.")},
-        {10, new SpellInfo("Portal", "Cost: 10 mana\nRange: Unlimited\nInstantly teleport to the nearest living being.\nMana naturally flows toward all living things. All a wizard must do is to follow the current.")}
+        {10, new SpellInfo("Teleport", "Cost: 15 mana\nRange: 60 meters\nInstantly teleport to a creature of your choice.\nMana naturally flows toward all living things. All a wizard must do is to follow the current.")}
     };
 
     private Dictionary<int, string> actionNames = new Dictionary<int, string>

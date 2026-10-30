@@ -5,6 +5,7 @@ public class MagicMissileController : MonoBehaviour
     private GameObject enemy = null;
     private Rigidbody rb;
     private bool hasSlowed = false;
+    private bool hit = false;
 
     [SerializeField] private float turnRate;
     [SerializeField] private float velocityReduction;
@@ -50,8 +51,9 @@ public class MagicMissileController : MonoBehaviour
         {
             EnemyHealth enemyHealth = collision.gameObject.GetComponentInParent<EnemyHealth>();
 
-            if (enemyHealth)
+            if (!hit && enemyHealth)
             {
+                hit = true;
                 enemyHealth.DecreaseHealth(damage);
             }
         }

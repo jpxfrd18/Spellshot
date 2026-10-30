@@ -10,5 +10,5 @@ public enum SpellType
     Gust = 7,
     Tether = 8,
     Draw = 9,
-    Portal = 10
+    Teleport = 10
 }

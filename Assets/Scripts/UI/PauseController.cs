@@ -740,8 +740,8 @@ public class PauseController : MonoBehaviour
                 case SpellType.Draw:
                     iconLabel.text = "DR";
                     break;
-                case SpellType.Portal:
-                    iconLabel.text = "PO";
+                case SpellType.Teleport:
+                    iconLabel.text = "TP";
                     break;
             }
         }

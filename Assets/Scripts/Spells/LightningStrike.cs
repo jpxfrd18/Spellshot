@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class LightningStrike : SpellModule
 {
-    [SerializeField] protected GameObject lightningPrefab;
-    [SerializeField] protected int manaCost;
+    [SerializeField] private GameObject lightningPrefab;
+    [SerializeField] private int manaCost;
+    [SerializeField] private int range;
     public override SpellCastType CastType { get; } = SpellCastType.Press;
     private int mask;
 
