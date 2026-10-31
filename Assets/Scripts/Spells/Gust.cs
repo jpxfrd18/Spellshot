@@ -3,6 +3,7 @@ using UnityEngine;
 public class Gust : SpellModule
 {
     [SerializeField] private int manaCost;
+    [SerializeField] private float force = 12.6f;
     public override SpellCastType CastType { get; } = SpellCastType.Press;
 
     public override void Cast(Player player)
@@ -15,6 +16,6 @@ public class Gust : SpellModule
             }
         }
 
-        player.Motor.Gust();
+        player.Motor.Gust(force);
     }
 }

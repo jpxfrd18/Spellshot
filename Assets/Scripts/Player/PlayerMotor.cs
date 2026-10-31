@@ -368,10 +368,10 @@ public class PlayerMotor : MonoBehaviour
         rb.linearDamping = 0.05f;
     }
 
-    public void Gust()
+    public void Gust(float force)
     {
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, 0f), rb.linearVelocity.z);
-        rb.AddForce(Vector3.up * playerRef.playerStats.persistant.jumpStrength * 1.4f, ForceMode.Impulse);
+        rb.AddForce(Vector3.up * 12.6f, ForceMode.Impulse);
 
         if (playerRef.playerJump.canJump)
         {

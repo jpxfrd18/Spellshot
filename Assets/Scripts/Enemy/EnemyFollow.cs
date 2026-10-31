@@ -14,6 +14,7 @@ public class EnemyFollow : MonoBehaviour
     [SerializeField] private float deaggroDelay;
     [SerializeField] private float interestDelay;
     [SerializeField] private float deaggroFallback;
+    [SerializeField] private bool relentless;
     private float deaggroTimer = 0f;
     private float interestTimer = 0f;
     private float turnSpeed;
@@ -64,6 +65,11 @@ public class EnemyFollow : MonoBehaviour
 
     private void LeaveAggro()
     {
+        if (relentless)
+        {
+            return;
+        }
+
         aggro = false;
         agent.isStopped = true;
         agent.ResetPath();
@@ -141,7 +147,7 @@ public class EnemyFollow : MonoBehaviour
         {
             //Find nearest point on navmesh to player and pathfind to it.
             NavMeshHit hit;
-            NavMesh.SamplePosition(player.transform.position, out hit, 5f, NavMesh.AllAreas);
+            NavMesh.SamplePosition(player.transform.position, out hit, 10f, NavMesh.AllAreas);
 
             if (float.IsInfinity(hit.position.x) || float.IsNaN(hit.position.x))
             {
