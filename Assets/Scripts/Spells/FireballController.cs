@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FireballController : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class FireballController : MonoBehaviour
         if (!exploded)
         {
             exploded = true;
-            Instantiate(explosion, transform.position, transform.rotation);
+            GameObject explosionObj = Instantiate(explosion, transform.position, transform.rotation);
+            SceneManager.MoveGameObjectToScene(explosionObj, gameObject.scene);
+
             Destroy(gameObject);
         }
     }

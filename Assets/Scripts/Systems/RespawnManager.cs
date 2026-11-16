@@ -9,6 +9,7 @@ public class RespawnManager : MonoBehaviour
     public static RespawnManager Instance { get; private set; }
     [field: SerializeField] public Transform playerSpawn { get; private set; }
     public bool IsPlayerDead { get; private set; } = false;
+    public int DeathCount { get; private set; } = 0;
     private VictoryController victoryController;
     private Vector3 originalSpawnPosition;
 
@@ -37,6 +38,7 @@ public class RespawnManager : MonoBehaviour
         if (!IsPlayerDead)
         {
             IsPlayerDead = true;
+            DeathCount++;
             victoryController.Reset();
             StartCoroutine(RespawnRoutine());
         }

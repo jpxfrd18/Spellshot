@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LightningStrike : SpellModule
 {
@@ -29,7 +30,8 @@ public class LightningStrike : SpellModule
             toPlayer.y = 0f;
             toPlayer.Normalize();
 
-            Instantiate(lightningPrefab, hit.point, Quaternion.LookRotation(toPlayer, Vector3.up));
+            GameObject lightning = Instantiate(lightningPrefab, hit.point, Quaternion.LookRotation(toPlayer, Vector3.up));
+            SceneManager.MoveGameObjectToScene(lightning, gameObject.scene);
         }
     }
 }

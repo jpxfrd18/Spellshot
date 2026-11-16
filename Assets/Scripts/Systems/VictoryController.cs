@@ -68,23 +68,36 @@ public class VictoryController : MonoBehaviour
 
     private void Win()
     {
-        if (!winning)
+        if (winning)
         {
-            winning = true;
-            StartCoroutine(WinRoutine());
+            return;
         }
+
+        winning = true;
+        StartCoroutine(WinRoutine());
     }
 
     private IEnumerator WinRoutine()
     {
+        Debug.Log($"[Frame {Time.frameCount}] Win Called");
+        int initialDeathCount = RespawnManager.Instance.DeathCount;
+        Debug.Log($"[Frame {Time.frameCount}] Initial Death Count: {initialDeathCount}");
+
         yield return null;
-        yield return null;
-        if (!RespawnManager.Instance.IsPlayerDead)
+        Debug.Log($"[Frame {Time.frameCount}] Current Death Count: {RespawnManager.Instance.DeathCount}");
+        if (RespawnManager.Instance.IsPlayerDead || RespawnManager.Instance.DeathCount > initialDeathCount)
         {
-            playerStats.OnWin();
-            pauseController.OnWin();
+            yield break;
         }
+
+        playerStats.SetInvincible(true);
+        yield return null;
+
+        Debug.Log($"[Frame {Time.frameCount}] Final Death Count: {RespawnManager.Instance.DeathCount}");
+        playerStats.OnWin();
+        pauseController.OnWin();
         winning = false;
+        playerStats.SetInvincible(false);
     }
 
     public override string ToString()

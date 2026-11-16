@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ProjectileSpell : SpellModule
 {
@@ -11,13 +12,14 @@ public class ProjectileSpell : SpellModule
     {
         if (!player.Stats.DecreaseMana(manaCost))
         {
-            if(player.Stats.DecreaseHealth(2* manaCost))
+            if (player.Stats.DecreaseHealth(2 * manaCost))
             {
                 return;
             }
         }
 
         GameObject projectile = Instantiate(projectilePrefab, player.AimSource, Quaternion.LookRotation(player.AimForward));
+        SceneManager.MoveGameObjectToScene(projectile, gameObject.scene);
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         rb.linearVelocity = initialSpeed * player.AimForward;

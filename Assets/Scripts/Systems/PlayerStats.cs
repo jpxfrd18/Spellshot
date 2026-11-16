@@ -12,6 +12,8 @@ public class PlayerStats : MonoBehaviour
     public event Action<int> OnHealthChanged;
     public event Action<int> OnManaChanged;
     private bool won = false;
+    private bool invincible = false;
+
 
     public static PlayerStats Instance { get; private set; }
 
@@ -40,6 +42,10 @@ public class PlayerStats : MonoBehaviour
     /// <returns>Returns true if damage kills the player</returns>
     public bool DecreaseHealth(int amount)
     {
+        if (invincible)
+        {
+            return false;
+        }
         health -= amount;
 
         if (health <= 0)
@@ -50,6 +56,11 @@ public class PlayerStats : MonoBehaviour
 
         OnHealthChanged?.Invoke(health);
         return health <= 0;
+    }
+
+    public void SetInvincible(bool invincible)
+    {
+        this.invincible = invincible;
     }
 
     public void IncreaseHealth(int amount)
