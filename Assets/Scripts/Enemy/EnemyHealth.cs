@@ -13,6 +13,7 @@ public class EnemyHealth : MonoBehaviour
     public void Awake()
     {
         currentHealth = maxHealth;
+        Debug.Log("Max Health: " + maxHealth);
     }
 
     public void DecreaseHealth(int amount)

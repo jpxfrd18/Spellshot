@@ -23,7 +23,6 @@ public class ForceLanceController : MonoBehaviour
             }
 
             hitEnemies.Add(other.attachedRigidbody);
-            Debug.Log("Hit: " + other.attachedRigidbody.name);
 
             EnemyHealth enemyHealth = other.attachedRigidbody.GetComponent<EnemyHealth>();
 

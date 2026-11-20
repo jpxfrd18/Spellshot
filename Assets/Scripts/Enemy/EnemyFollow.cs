@@ -59,6 +59,11 @@ public class EnemyFollow : MonoBehaviour
 
     private void EnterAggro()
     {
+        if (!player)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
         aggro = true;
         deaggroTimer = 0f;
     }

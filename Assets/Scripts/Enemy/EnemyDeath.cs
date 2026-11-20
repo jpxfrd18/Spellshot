@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyDeath : MonoBehaviour
 {
@@ -32,7 +33,8 @@ public class EnemyDeath : MonoBehaviour
 
         if (deathEffectPrefab != null)
         {
-            Instantiate(deathEffectPrefab, transform.position, transform.rotation);
+            GameObject effect = Instantiate(deathEffectPrefab, transform.position, transform.rotation);
+            SceneManager.MoveGameObjectToScene(effect, gameObject.scene);
         }
     }
 }

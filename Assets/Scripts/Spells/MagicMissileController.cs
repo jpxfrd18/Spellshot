@@ -37,6 +37,11 @@ public class MagicMissileController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (hit)
+        {
+            return;
+        }
+
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
@@ -44,16 +49,17 @@ public class MagicMissileController : MonoBehaviour
             if (enemyHealth)
             {
                 enemyHealth.DecreaseHealth(damage);
+                hit = true;
             }
 
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
+            hit = true;
             EnemyHealth enemyHealth = collision.gameObject.GetComponentInParent<EnemyHealth>();
 
-            if (!hit && enemyHealth)
+            if (enemyHealth)
             {
-                hit = true;
                 enemyHealth.DecreaseHealth(damage);
             }
         }
