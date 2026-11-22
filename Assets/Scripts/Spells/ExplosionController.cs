@@ -4,11 +4,24 @@ using UnityEngine;
 public class ExplosionController : MonoBehaviour
 {
     [SerializeField] private int damage;
+    [SerializeField] private float lifetime;
+    private bool disabled = false;
     private HashSet<GameObject> hitTargets = new HashSet<GameObject>();
+    private float timer = 0f;
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+
+        if (timer >= lifetime)
+        {
+            disabled = true;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.isTrigger || other.attachedRigidbody == null)
+        if (disabled || other.isTrigger || other.attachedRigidbody == null)
         {
             return;
         }
