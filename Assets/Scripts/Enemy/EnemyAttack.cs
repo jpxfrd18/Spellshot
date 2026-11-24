@@ -9,7 +9,6 @@ public class EnemyAttack : MonoBehaviour
 
     public void Attack()
     {
-        Debug.Log("EnemyAttack.Attack() called");
         isAttacking = true;
         if (string.IsNullOrWhiteSpace(attackName))
         {
@@ -24,7 +23,6 @@ public class EnemyAttack : MonoBehaviour
 
     public void FinishAttack()
     {
-        Debug.Log("EnemyAttack.FinishAttack() called");
         isAttacking = false;
     }
 

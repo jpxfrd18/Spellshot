@@ -18,6 +18,7 @@ public class EnemyFollow : MonoBehaviour
     private float deaggroTimer = 0f;
     private float interestTimer = 0f;
     private float turnSpeed;
+    private bool enableRotation = true;
     private EnemyAttack attack;
     private EnemyHealth health;
     private int layer;
@@ -275,6 +276,11 @@ public class EnemyFollow : MonoBehaviour
 
     private void Rotate(Vector3 playerHorizontal)
     {
+        if (!enableRotation)
+        {
+            return;
+        }
+
         Vector3 desiredDirection = (playerHorizontal - root.position).normalized;
 
         Vector3 newDirection = Vector3.RotateTowards(root.forward,
@@ -284,6 +290,16 @@ public class EnemyFollow : MonoBehaviour
         newDirection.Normalize();
 
         root.rotation = Quaternion.LookRotation(newDirection);
+    }
+
+    public void CancelRotation()
+    {
+        enableRotation = false;
+    }
+
+    public void EnableRotation()
+    {
+        enableRotation = true;
     }
 
     private bool CheckLineOfSight()

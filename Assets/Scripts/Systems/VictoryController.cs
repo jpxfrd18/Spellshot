@@ -79,12 +79,9 @@ public class VictoryController : MonoBehaviour
 
     private IEnumerator WinRoutine()
     {
-        Debug.Log($"[Frame {Time.frameCount}] Win Called");
         int initialDeathCount = RespawnManager.Instance.DeathCount;
-        Debug.Log($"[Frame {Time.frameCount}] Initial Death Count: {initialDeathCount}");
 
         yield return null;
-        Debug.Log($"[Frame {Time.frameCount}] Current Death Count: {RespawnManager.Instance.DeathCount}");
         if (RespawnManager.Instance.IsPlayerDead || RespawnManager.Instance.DeathCount > initialDeathCount)
         {
             yield break;
@@ -93,7 +90,6 @@ public class VictoryController : MonoBehaviour
         playerStats.SetInvincible(true);
         yield return null;
 
-        Debug.Log($"[Frame {Time.frameCount}] Final Death Count: {RespawnManager.Instance.DeathCount}");
         playerStats.OnWin();
         pauseController.OnWin();
         winning = false;
